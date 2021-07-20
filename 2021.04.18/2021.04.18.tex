@@ -1,0 +1,29 @@
+%2021.04.18
+\begin{mybox}{问题2021.04.18}
+	
+	\qquad 设函数$f(x)$在区间$[0,1]$上二阶可导,$f(0)=0$，且$f(1)=1$.证明：\\
+	(1)存在$x_0 \in (0,1)$,使得$f'(x_0)=1$;\\
+	(2)存在$\xi \in(0,1)$,使得$\xi f''(\xi)+(1+\xi)f'(\xi)=1+\xi$.
+\end{mybox}
+\noindent
+\textbf{解}
+
+\noindent
+(1)
+
+$$f(x)\in C[0,1]\cap D(0,1)$$
+$$\Rightarrow \exists x_0 \in (0,1),f'(x_0)=\frac{f(1)-f(0)}{1-0}=1$$
+
+\noindent
+(2)
+$$f''(x)+(1+\frac{1}{x})f'(x)=1+\frac{1}{x}$$
+\begin{align*}
+	f'(x)&=e^{-\int (1+\frac{1}{x})\mathrm{d}x}(\int (1+\frac{1}{x})e^{\int (1+\frac{1}{x})}\mathrm{d}x+C)\\
+	&=\frac{e^{-x}}{x}(\int (x+1)e^x\mathrm{d}x+C )\\
+	&=\frac{e^{-x}}{x}(xe^x +C)\\
+	xe^x(f'(x)-1)&=C
+\end{align*}
+$$\text{设}F(x)=xe^x(f'(x)-1)$$
+$$F(x)\in C[0,x_0]\cap D(0,x_0),F(x_0)=F(0)$$
+$$\Rightarrow \exists \xi \in(0,x_0)\subset (0,1),F'(\xi)=0$$
+$$\Rightarrow \xi f''(\xi)+(1+\xi)f'(\xi)=1+\xi$$

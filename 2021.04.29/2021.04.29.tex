@@ -1,0 +1,22 @@
+%2021.04.29
+\begin{mybox}{问题2021.04.29}
+	
+	\qquad 设函数$f(x,y)$在区域$D=\{x^2+y^2\le 1 \}$上连续，且满足\\
+	$(f''_{xx}+f''_{yy})e^{x^2+y^2}=1$,则$\iint \limits_D xf'_{x}+yf'_{y}\mathrm{d}\sigma$\underline{\hbox to 20mm{}}.
+\end{mybox}
+\noindent
+\textbf{解：}
+
+\begin{align*}
+\iint\limits_{D} xf'_{x}+yf'_{y}\mathrm{d}\sigma &=\int_{0}^{2\pi} \mathrm{d}\theta \int_{0}^{1}(\rho\cos \theta f'_{x}+\rho\sin \theta f'_{y})\rho \mathrm{d}\rho\\
+&=\int_{0}^{1} \rho\mathrm{d}\rho \int_{0}^{2\pi} (\frac{\mathrm{d} y}{\mathrm{d} \theta}f'_{x}-\frac{\mathrm{d} x}{\mathrm{d} \theta}f'_{y})\mathrm{d}\theta\\
+&=\int_{0}^{1}\rho\mathrm{d}\rho\int_{0}^{2\pi}-f'_{y}\mathrm{d}x+f'_{x}\mathrm{d}y\\
+&=\int_{0}^{1}\rho\mathrm{d}\rho \iint\limits_{x^2+y^2\le \rho} (f''_{xx}+f''_{yy})d\sigma\\
+&=\int_{0}^{1}\rho\mathrm{d}\rho \iint\limits_{x^2+y^2\le \rho} e^{-(x^2+y^2)}d\sigma\\
+&=\int_{0}^{1}\rho \mathrm{d}\rho \int_{0}^{2\pi}\mathrm{d} \theta \int_{0}^{\rho} e^{-r^2} r\mathrm{d}r\\
+&=\int_{0}^{1}\rho \mathrm{d}\rho \int_{0}^{2\pi} \left. \frac{e^{-r^2}}{-2} \right|_{0}^{\rho} \mathrm{d} \theta\\
+&=\int_{0}^{1} \rho \mathrm{d}\rho \int_{0}^{2\pi}\frac{1-e^{-\rho^2}}{2}\mathrm{d}\theta \\
+&=\pi\int_{0}^{1}\rho (1-e^{-\rho^2})\rho \mathrm{d}\rho\\
+&=\left.\pi(\frac{\rho^2}{2}+\frac{e^{-\rho^2}}{2})\right|_{0}^{1}\\
+&=\frac{\pi}{2e}
+\end{align*}

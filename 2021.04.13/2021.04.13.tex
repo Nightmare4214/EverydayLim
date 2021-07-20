@@ -1,0 +1,19 @@
+%2021.04.13
+\begin{mybox}{问题2021.04.13}
+	
+	\qquad 设$x=2\int_{0}^{t}e^{-s^2}\mathrm{d}s,y=\int_{0}^{t}\sin(t-s)^2 \mathrm{d}s$,则$\left.\frac{\mathrm{d}^2 y}{\mathrm{d}x^2}\right|_{t=\sqrt{\pi}}=$\underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解}
+
+$$y=\int_{0}^{t}\sin u \mathrm{d}u$$
+\begin{align*}
+	\frac{\mathrm{d}y}{\mathrm{d}x}&=\frac{\frac{\mathrm{d}y}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}x}}\\
+	&=\frac{\sin t^2}{2e^{-t^2}}
+\end{align*}
+\begin{align*}
+	\frac{\mathrm{d}^2 x}{\mathrm{d}x^2}&=\frac{\frac{\mathrm{d}(\frac{\mathrm{d}y}{\mathrm{d}x})}{\mathrm{d}t}}{\frac{\mathrm{d}x}{\mathrm{d}t}}\\
+	&=\frac{\frac{\cos t^2 2t(2e^{-t^2})-\sin t^2 2e^{-t^2}(-2t)}{4e^{-2t^2}}}{2e^{-t^2}}\\
+	&=\frac{te^{2t^2}}{2}
+\end{align*}
+$$\left.\frac{\mathrm{d}^2 y}{\mathrm{d}x^2}\right|_{t=\sqrt{\pi}}=\frac{\sqrt{\pi} e^{2\pi}}{2}$$

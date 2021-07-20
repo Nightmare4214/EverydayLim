@@ -1,0 +1,14 @@
+%2021.03.04
+\begin{mybox}{问题2021.03.04}
+	
+	\qquad 当$x\to 0^+$时，$\sqrt{1+\tan \sqrt{1-\cos x}}-\sqrt{1+\sin \sqrt{1-\cos x}}$与$cx^k$是等价无穷小,$c=$\underline{\hbox to 20mm{}},$k=$\underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解}
+\begin{align*}
+	1&=\lim\limits_{x \to 0^+} \frac{\sqrt{1+\tan \sqrt{1-\cos x}}-\sqrt{1+\sin \sqrt{1-\cos x}}}{cx^k}\\
+	&=\lim\limits_{x \to 0^+} \frac{\tan \sqrt{1-\cos x}-\sin \sqrt{1-\cos x}}{cx^k(\sqrt{1+\tan \sqrt{1-\cos x}}+\sqrt{1+\sin \sqrt{1-\cos x}})}\\
+	&=\lim\limits_{x \to 0^+} \frac{(1-\cos x)^{\frac{3}{2}}}{4cx^k}\\
+	&=\lim \limits_{x\to 0^+} \frac{x^3}{8\sqrt{2} cx^k}
+\end{align*}
+$$\Rightarrow c=\frac{\sqrt{2}}{16},k=3$$

@@ -1,0 +1,14 @@
+%2021.03.18
+\begin{mybox}{问题2021.03.18}
+	
+	\qquad $\lim\limits_{x \to 0^+}(x^2+x)^{x^\alpha},(\alpha >0)$
+\end{mybox}
+\noindent
+\textbf{解}
+\begin{align*}
+	&\quad\lim\limits_{x \to 0^+}(x^2+x)^{x^\alpha}\\
+	&=e^{\lim\limits_{x \to 0^+} \frac{\ln (x^2+x)}{\frac{1}{x^\alpha}}}\\
+	&=e^{\lim\limits_{x \to 0^+} \frac{\frac{2x+1}{x^2+x}}{\frac{-\alpha}{x^{\alpha+1}}}}\\
+	&=e^{\lim\limits_{x \to 0^+} \frac{2x+1}{-\alpha(x+1)}x^\alpha}\\
+	&=1
+\end{align*}

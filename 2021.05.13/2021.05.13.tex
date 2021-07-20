@@ -1,0 +1,28 @@
+%2021.05.13
+\begin{mybox}{问题2021.05.13}
+	
+	\qquad 设$\Omega = \left\lbrace \left. (x,y,z)\right| x^2+y^2+z^2\le 1 \right\rbrace $,则三重积分$\iiint \limits_{\Omega} e^{\left|x\right|} \mathrm{d} v=$\underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解：}
+设$\Omega_{1} = \left\lbrace \left. (x,y,z)\right| x^2+y^2+z^2\le 1,x\ge0,y\ge0,z\ge0 \right\rbrace $\\
+球面坐标
+
+由对称性和轮换对称性
+\begin{align*}
+	\iiint \limits_{\Omega} e^{\left|x\right|} \mathrm{d} v &= 8\iiint \limits_{\Omega_{1}} e^{\left|z\right|} \mathrm{d} v\\
+	&=8\int_{0}^{\frac{\pi}{2}}\mathrm{d}\theta \int_{0}^{\frac{\pi}{2}}\mathrm{d}\phi \int_{0}^{1} e^{r\cos \phi} r^2 \sin \phi \mathrm{d}r\\
+	&=4\pi\int_{0}^{1} \mathrm{d}r \int_{0}^{\frac{\pi}{2}} e^{r\cos \phi}r^2 \sin \phi  \mathrm{d}\phi\\
+	&=-4\pi\int_{0}^{1} r \mathrm{d} r \int_{0}^{\frac{\pi}{2}} e^{r\cos\phi}\mathrm{d}(r\cos\phi)\\
+	&=4\pi\int_{0}^{1} r(e^{r}-1)\mathrm{d}r\\
+	&=4\pi\left[(r-1)e^{r} -\frac{r^2}{2}\right]_{0}^{1}\\
+	&=2\pi
+\end{align*}
+
+截面法
+\begin{align*}
+	\iiint \limits_{\Omega} e^{\left|x\right|} \mathrm{d} v &=\int_{-1}^{1} e^{\left|x\right|} \pi(1-x^2)\mathrm{d} x\\
+	&=2\pi\int_{0}^{1}e^{x}(1-x^2)\mathrm{d}x\\
+	&=\left. -2\pi(x-1)^2 e^{x} \right|_{0}^{1}\\
+	&=2\pi
+\end{align*}

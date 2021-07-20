@@ -1,0 +1,15 @@
+%2021.04.24
+\begin{mybox}{问题2021.04.24}
+	
+	\qquad 设$a_{n}=\frac{3}{2}\int_{0}^{\frac{n}{n+1}}x^{n-1}\sqrt{1+x^n}\mathrm{d}x$,则$\lim \limits_{n \to \infty}na_{n}=$\underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解}
+
+\begin{align*}
+	\lim \limits_{n\to \infty} na_{n}&=\lim \limits_{n\to \infty} \frac{3}{2}\int_{0}^{\frac{n}{n+1}}nx^{n-1}\sqrt{1+x^n}\mathrm{d}x\\
+	&=\lim \limits_{n \to \infty} \frac{3}{2} \int_{0}^{\frac{n}{n+1}}\sqrt{1+x^n}\mathrm{d}x^n\\
+	&=\lim \limits_{n \to \infty} [(1+x^n)^{\frac{3}{2}}]_{0}^{\frac{n}{n+1}}\\
+	&=(1+\lim \limits_{n \to \infty}(1-\frac{1}{n+1})^n)^\frac{3}{2}-1\\
+	&=(1+e^{-1})^{\frac{3}{2}}-1
+\end{align*}

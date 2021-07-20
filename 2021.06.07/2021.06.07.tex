@@ -1,0 +1,34 @@
+%2021.06.07
+\begin{mybox}{问题2021.06.07}
+	\qquad 设$A,B$是可逆矩阵,且$A^{-1}\sim B^{-1}$,则下列结果\\
+	\ding{172}$AB\sim BA$ \ding{173}$A\sim B $\ding{174}$A^{2}\sim B^{2}$ \ding{175}$A^{T}\sim B^{T}$\\
+正确的个数为\underline{\hbox to 20mm{}}
+\end{mybox}	
+\noindent
+\textbf{解：}
+$$ A^{-1}\sim B^{-1}$$
+$$\Rightarrow \exists \text{可逆矩阵}P ,\text{使} P^{-1}A^{-1} P =B^{-1}$$
+\begin{align*}
+	P^{-1}A^{-1}P &= B^{-1}\\
+	(P^{-1}A^{-1}P)^{-1}&=(B^{-1})^{-1}\\
+	P^{-1}A P &= B\\
+	\Rightarrow A&\sim B
+\end{align*}
+\begin{align*}
+	P^{-1}A P &= B \\
+	P^{-1}A P P^{-1} A P &=B^{2}\\
+	P^{-1}A^{2} P&=B^{2}\\
+	\Rightarrow A&\sim B
+\end{align*}
+\begin{align*}
+	P^{-1}A P &= B \\
+	(P^{-1}A P)^{T} &=B^{T}\\
+	P^{T} A^{T} (P^{-1})^{T} &=B^{T}\\
+	P^{T} A^{T} (P^{T})^{-1} &=B^{T}\\
+	\Rightarrow A^{T} &\sim B^{T}
+\end{align*}
+\begin{align*}
+	A^{-1}AB A &= BA \\
+	\Rightarrow AB&\sim BA
+\end{align*}
+$$\Rightarrow \text{正确的个数为4}$$

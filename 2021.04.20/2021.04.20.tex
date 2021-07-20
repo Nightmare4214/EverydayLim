@@ -1,0 +1,15 @@
+%2021.04.20
+\begin{mybox}{问题2021.04.20}
+	
+	\qquad $I=\int_{-1}^{1}\frac{1}{(1+e^x)(1+x^2)}\mathrm{d}x=$\underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解}
+\begin{align*}
+	\int_{-1}^{1}\frac{1}{(1+e^x)(1+x^2)}\mathrm{d}x&=\int_{-1}^{1}\frac{1}{(1+e^{-x})(1+(-x)^2)}\mathrm{d}x\\
+	&=\int_{-1}^{1}\frac{e^x}{(1+e^x)(1+x^2)}\mathrm{d}x\\
+	&=\frac{1}{2}\int_{-1}^{1}\frac{1}{1+x^2}\mathrm{d}x\\
+	&=\int_{0}^{1}\frac{1}{1+x^2}\mathrm{d}x\\
+	&=[\arctan x]_{0}^{1}\\
+	&=\frac{\pi}{4}
+\end{align*}

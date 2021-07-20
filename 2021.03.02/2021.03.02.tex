@@ -1,0 +1,19 @@
+%2021.03.02
+\begin{mybox}{问题2021.03.02}
+	
+	\qquad $\lim\limits_{x \to 0} \frac{(1-\sqrt{\cos x})(1-\sqrt[3]{\cos x})\dots (1-\sqrt[n]{\cos x})}{(1-\cos x)^{n-1}}$
+\end{mybox}
+\noindent
+\textbf{解}
+\begin{align*}
+	&\quad \lim\limits_{x\to 0} \frac{1-\sqrt[n]{\cos x}}{x^2}\\
+	&=-\lim\limits_{x\to 0} \frac{\sqrt[n]{1+\cos x -1}-1}{x^2}\\
+	&=-\lim\limits_{x\to 0} \frac{\cos x -1}{nx^2}\\
+	&=\frac{1}{2n}\\
+	&\Rightarrow 1-\sqrt[n]{\cos x} \sim \frac{x^2}{2n}
+\end{align*}
+\begin{align*}
+	&\quad\lim\limits_{x \to 0} \frac{(1-\sqrt{\cos x})(1-\sqrt[3]{\cos x})\dots (1-\sqrt[n]{\cos x})}{(1-\cos x)^{n-1}}\\
+	&=\lim\limits_{x \to 0} \frac{\frac{x^2}{4} \frac{x^2}{6}\dots \frac{x^2}{2n}}{(\frac{x^2}{2})^{n-1}}\\
+	&=\frac{1}{n!}
+\end{align*}

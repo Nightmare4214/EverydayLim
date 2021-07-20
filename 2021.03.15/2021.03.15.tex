@@ -1,0 +1,15 @@
+%2021.03.15
+\begin{mybox}{问题2021.03.15}
+	
+	\qquad $\lim\limits_{x \to 0}(\frac{a^x+b^x+c^x}{3})^{\frac{1}{x}}(a,b,c>0)$
+\end{mybox}
+\noindent
+\textbf{解}
+
+\begin{align*}
+	&\quad\lim\limits_{x \to 0}(\frac{a^x+b^x+c^x}{3})^{\frac{1}{x}}\\
+	&=e^{\lim \limits_{x \to 0} \frac{a^x-1+b^x-1+c^x-1}{3x}}\\
+	&=e^{\lim \limits_{x \to 0} \frac{x\ln a+ x\ln b+x\ln c}{3x}}\\
+	&=e^{\frac{\ln abc}{3}}\\
+	&=\sqrt[3]{abc}
+\end{align*}

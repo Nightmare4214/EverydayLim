@@ -1,0 +1,15 @@
+%2021.05.24
+\begin{mybox}{问题2021.05.24}
+	
+	\qquad $\lim \limits_{n\to\infty} (1+\sin(\pi\sqrt{4n^2+2}))^{n}$
+\end{mybox}
+\noindent
+\textbf{解：}
+\begin{align*}
+	\lim \limits_{n\to\infty} (1+\sin(\pi\sqrt{4n^2+2}))^{n}&=\lim \limits_{n\to\infty} (1+\sin(\pi\sqrt{4n^2+2}-2n\pi))^{n}\\
+	&=\lim \limits_{n\to\infty} (1+\sin(\frac{2\pi}{\sqrt{4n^2+2}+2n}))^{n}\\
+	&=exp(\lim\limits_{n\to\infty} n\sin(\frac{2\pi}{\sqrt{4n^2+2}+2n}))\\
+	&=exp(\lim\limits_{n\to\infty} \frac{2n\pi}{\sqrt{4n^2+2}+2n})\\
+	&=e^{\frac{2\pi}{4}}\\
+	&=e^{\frac{\pi}{2}}
+\end{align*}

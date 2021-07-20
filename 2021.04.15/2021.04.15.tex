@@ -1,0 +1,19 @@
+%2021.04.15
+\begin{mybox}{问题2021.04.15}
+	
+	\qquad 已知$u=g(\sin y)$,其中$g'(v)$存在,$y=f(x)$由参数方程\\
+	$\begin{cases}
+		x=a\cos t\\
+		y=b\sin t
+	\end{cases},(0<t<\frac{\pi}{2},a\neq 0)$\\
+所确定，求$\mathrm{d}u$
+\end{mybox}
+\noindent
+\textbf{解}
+
+\begin{align*}
+	\mathrm{d}u&=g'(\sin y)\cos y \mathrm{d}y\\
+	  &=g'(\sin y)\cos y \frac{\mathrm{d}y}{\mathrm{d}x} \mathrm{d}x\\
+	  &=g'(\sin y)\cos y \frac{b\cos t}{-a\sin t} \mathrm{d}x\\
+	  &=-g'(\sin y)\cos y \frac{b^2 x}{a^2 y} \mathrm{d}x
+\end{align*}

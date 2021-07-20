@@ -1,0 +1,15 @@
+%2021.02.26
+\begin{mybox}{问题2021.02.26}
+	
+	\qquad $\lim\limits_{x\to 0}\frac{e^2-(1+x)^{\frac{2}{x}}}{x}$
+\end{mybox}
+\noindent
+\textbf{解}
+\begin{align*}
+	&\quad\lim\limits_{x\to 0}\frac{e^2-(1+x)^{\frac{2}{x}}}{x}\\
+	&=\lim \limits_{x \to 0} \frac{e^2-e^{\frac{2\ln (1+x)}{x}}}{x}\\
+	&=e^2 \lim\limits_{x\to 0}\frac{1-e^{\frac{2(\ln(1+x) -x)}{x}}}{x}\\
+	&=e^2\lim\limits_{x \to 0} \frac{2(x-\ln (x+1))}{x^2}\\
+	&=e^2\lim\limits_{x \to 0} \frac{x^2}{x^2}\\
+	&=e^2
+\end{align*}

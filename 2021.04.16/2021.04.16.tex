@@ -1,0 +1,21 @@
+%2021.04.16
+	\begin{mybox}{问题2021.04.16}
+	
+	\qquad 设在$[1,+\infty)$上，$f''(x)<0,f(1)=2,f'(1)=-3$.\\
+	证明:$f(x)=0$在$[1,+\infty)$内只有一个根
+\end{mybox}
+\noindent
+\textbf{解}
+
+\begin{align*}
+	f(x)&=f(1)+f'(1)(x-1)+\frac{f''(\xi)}{2}(x-1)^2(\xi\in(1,x))\\
+	f(x)&<2-3(x-1)
+\end{align*}
+$$\Rightarrow f(2)<2-3(2-1)=-1<0$$
+$$f(x)\in C[1,2],f(1)f(2)<0$$
+$$\Rightarrow \exists \zeta \in(1,2),f(\zeta)=0$$
+$$\text{因为}f''(x)<0$$
+$$\Rightarrow f'(x)\text{单调递减}$$
+$$\Rightarrow f'(x)<f'(1)=0$$
+$$\Rightarrow f(x)\text{单调递减}$$
+$$\Rightarrow f(x)=0\text{在}[1,+\infty)\text{内只有一个根}$$

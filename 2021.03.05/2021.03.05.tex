@@ -1,0 +1,14 @@
+%2021.03.05
+\begin{mybox}{问题2021.03.05}
+	
+	\qquad $\lim \limits_{x \to 1} \frac{x-x^x}{1-x+\ln x}$
+\end{mybox}
+\noindent
+\textbf{解}
+\begin{align*}
+	&\quad \lim \limits_{x \to 1} \frac{x-x^x}{1-x+\ln x}\\
+	&=\lim \limits_{x \to 1} \frac{x-e^{x\ln x}}{1-x+\ln (1+x-1)}\\
+	&=\lim \limits_{x\to 1} \frac{x-1-x\ln x}{1-x+x-1-\frac{(x-1)^2}{2}}\\
+	&=-2\lim \limits_{x\to 1}\frac{(x-1)(1-x)}{(x-1)^2}\\
+	&=2
+\end{align*}

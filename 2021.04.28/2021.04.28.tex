@@ -1,0 +1,21 @@
+%2021.04.28
+\begin{mybox}{问题2021.04.28}
+	
+	\qquad 设函数$f(x)$在$[1,+\infty]$连续, $\int_{1}^{+\infty}f(x)\mathrm{d}x$收敛,且满足\\
+	$ f(x)= \frac{\log{x} }{(1+x)^2} +\frac{1+x^2}{1+x^4} \int_{1}^{+\infty}f(x)\mathrm{d}t $, 则\( \int_{1}^{+\infty}f(x)\mathrm{d}x =  \)\underline{\hbox to 20mm{}}.
+\end{mybox}
+\noindent
+\textbf{解：}
+
+因为$\int_{1}^{+\infty}f(x)\mathrm{d}x$收敛,所以$\int_{1}^{+\infty}f(x)\mathrm{d}x$是一个常数\\
+设$A=\int_{1}^{+\infty}f(x)\mathrm{d}x$
+\begin{align*}
+	A&=\int_{1}^{+\infty} \frac{\log{x}}{(1+x)^2}\mathrm{d}x +A\int_{1}^{+\infty}\frac{1+x^2}{1+x^4}\mathrm{d}x\\
+	&=-\int_{1}^{+\infty} \log{x}\mathrm{d}\frac{1}{1+x}+ A\int_{1}^{+\infty} \frac{\mathrm{d}(x-\frac{1}{x})}{(x-\frac{1}{x})^2 +2}\\
+	&=[\frac{\log{x}}{1+x}]_{1}^{+\infty} + \int_{1}^{+\infty} \frac{1}{x(1+x)}\mathrm{d}x +A[\frac{1}{\sqrt{2}} \arctan{\frac{x-\frac{1}{x}}{\sqrt{2}}}]_{1}^{+\infty}\\
+	&=0-0+\int_{1}^{+\infty}(\frac{1}{x}-\frac{1}{x+1})\mathrm{d}x + A\frac{\pi}{2\sqrt{2}}\\
+	&=[\log{\left|\frac{x}{x+1} \right|}]_{1}^{+\infty}+ A\frac{\pi}{2\sqrt{2}}\\
+	&=\log{2}+A\frac{\pi}{2\sqrt{2}}
+\end{align*}
+$\Rightarrow A = \frac{\log{2}}{1-\frac{\pi}{2\sqrt{2}}}= \frac{4\log{2}}{4-\sqrt{2}\pi}$\\
+$\Rightarrow \int_{1}^{+\infty}f(x)\mathrm{d}x =  \frac{4\log{2}}{4-\sqrt{2}\pi}$

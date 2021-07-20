@@ -1,0 +1,20 @@
+%2021.04.14
+\begin{mybox}{问题2021.04.14}
+	
+	\qquad 设$f(x)$在$(-\frac{\pi}{2a},\frac{\pi}{2a})(a>0)$内有定义,且$f'(0)=a$,又对任意的$x,y,x+y\in(-\frac{\pi}{2a},\frac{\pi}{2a})$,有$f(x+y)=\frac{f(x)+f(y)}{1-f(x)f(y)}$,求$f(x)$.
+\end{mybox}
+\noindent
+\textbf{解}
+
+令$x=y=0$,有$f(0)=0$
+\begin{align*}
+	f'(x)&=\lim \limits_{\Delta x \to 0} \frac{f(x+\Delta x)-f(x)}{\Delta x}\\
+	&=\lim \limits_{\Delta x \to 0} \frac{\frac{f(x)+f(\Delta x)}{1-f(x)f(\Delta x)}-f(x)}{\Delta x}\\
+	&=\lim\limits_{\Delta \to 0}\frac{f(\Delta x)}{\Delta x} \lim \limits_{\Delta x \to 0} \frac{1+f^2(x)}{1-f(x)f(\Delta x)}\\
+	&=a(1+f^2(x))\\
+ \frac{\mathrm{d}y}{1+f^2(x)}&=a\mathrm{d}x\\
+ \arctan f(x) &=ax+C\\
+         f(0)&=0\\
+         C&=0\\
+         f(x)&=\tan(ax)
+\end{align*}

@@ -1,0 +1,19 @@
+%2021.05.08
+\begin{mybox}{问题2021.05.08}
+	
+	\qquad 设函数$y=y(x)$由方程$\ln y+2x -\frac{1}{2}y^2=0$确定,则曲线$y=y(x)$在$1\le y\le e$上的长度为 \underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解：}
+\begin{align*}
+	\ln y+2x -\frac{1}{2}y^2&=0\\
+	\frac{1}{y}+2\frac{\mathrm{d}x}{\mathrm{d}y}-y&=0\\
+	\frac{\mathrm{d}x}{\mathrm{d}y}&=\frac{y^2-1}{2y}
+\end{align*}
+\begin{align*}
+	&\quad\int_{1}^{e} \sqrt{1+(\frac{\mathrm{d}x}{\mathrm{d}y})^2}\mathrm{d}y\\
+	&=\int_{1}^{e} \frac{y^2+1}{2y}\mathrm{d}y\\
+	&=\int_{1}^{e} (\frac{y}{2}+\frac{1}{2y})\mathrm{d}y\\
+	&=[\frac{y^2}{4}+\frac{1}{2} \ln y]_{1}^{e}\\
+	&=\frac{e^2+1}{4}
+\end{align*}

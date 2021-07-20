@@ -1,0 +1,22 @@
+%2021.06.16
+\begin{mybox}{问题2021.06.16}
+	\qquad 求曲线$x^3+y^3=3xy$的斜渐近线方程
+\end{mybox}	
+\noindent 
+\textbf{解：}
+设参数方程$y=tx$	
+\begin{align*}
+x^3+y^3&=3xy\\
+x^3+t^3 x^3&=3tx^2\\
+x&=\frac{3t}{1+t^3}\\
+y&=\frac{3t^2}{1+t^3}
+\end{align*}		
+$$k=\lim\limits_{x\to \infty} \frac{y}{x}=\lim\limits_{t\to -1} t =-1$$
+\begin{align*}
+b&=\lim\limits_{x\to\infty} (y-kx)\\
+ &=\lim\limits_{t\to -1} (\frac{3t^2}{1+t^3} +\frac{3t}{1+t^3})\\
+ &=\lim\limits_{t\to -1} \frac{3t(t+1)}{(t+1)(t^2-t+1)}\\
+ &=\lim\limits_{t\to -1}\frac{3t}{t^2-t+1}\\
+ &=-1
+\end{align*}
+$$x^3+y^3=3xy\text{的斜渐近线方程} y=-x-1$$

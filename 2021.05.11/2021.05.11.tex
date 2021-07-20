@@ -1,0 +1,23 @@
+%2021.05.11
+\begin{mybox}{问题2021.05.11}
+	
+	\qquad 设$m$与$n$都是常数,若反常积分$\int_{0}^{+\infty} \frac{x^n(1-e^{-x})}{(1+x)^m}\mathrm{d}x $收敛,则$m$与$n$的取值范围为()\begin{tasks}(2)
+		\task $n>-2,m>n+1$
+		\task $n>-2,m<n+1$
+		\task $n<-2,m<n+1$
+		\task $n<-2,m>n+1$
+	\end{tasks}
+\end{mybox}
+\noindent
+\textbf{解：}
+\begin{align*}
+	\lim \limits_{x \to 0^{+}} x^{-(n+1)}\: \frac{x^n(1-e^{-x})}{(1+x)^m}=1
+\end{align*}
+$$\Rightarrow -(n+1)<1$$
+$$\Rightarrow n>-2$$
+\begin{align*}
+	\lim \limits_{x \to +\infty} x^{m-n}\:\frac{x^n(1-e^{-x})}{(1+x)^m}=1
+\end{align*}
+$$\Rightarrow m-n>1$$
+$$\Rightarrow m>n+1$$
+$$\Rightarrow \text{选A}$$

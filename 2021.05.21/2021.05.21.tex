@@ -1,0 +1,14 @@
+%2021.05.21
+\begin{mybox}{问题2021.05.21}
+	
+	\qquad 求极限$I=\lim\limits_{x\to 0^{+}} \frac{x^x -(\sin x)^x}{x^2\ln(1+x)}$
+\end{mybox}
+\noindent
+\textbf{解：}
+\begin{align*}
+	\lim\limits_{x\to 0^{+}} \frac{x^x -(\sin x)^x}{x^2\ln(1+x)}&=
+	\lim\limits_{x\to 0^{+}} x^x \lim\limits_{x\to 0^{+}} \frac{1-(\frac{\sin x}{x})^x}{x^3}\\
+	&=\lim\limits_{x\to 0^{+}} \frac{1-e^{x\ln(1+\frac{\sin x - x}{x})}}{x^3}\\
+	&=\lim\limits_{x\to 0^{+}} \frac{x-\sin x}{x^3}\\
+	&=\frac{1}{6}
+\end{align*}

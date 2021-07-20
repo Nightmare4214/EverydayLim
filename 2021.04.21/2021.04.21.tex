@@ -1,0 +1,29 @@
+%2021.04.21
+\begin{mybox}{问题2021.04.21}
+	
+	\qquad 求反常积分$\int_{0}^{1}\frac{x^b-x^a}{\ln x}\mathrm{d}x(a,b>0)$
+\end{mybox}
+\noindent
+\textbf{解}
+
+\noindent
+解法1:
+\begin{align*}
+	\int_{0}^{1}\frac{x^b-x^a}{\ln x}\mathrm{d}x&=\int_{0}^{1}\mathrm{d}x\int_{a}^{b}x^y\mathrm{d}y\\
+	&=\int_{a}^{b}\mathrm{d}y\int_{0}^{1}x^y\mathrm{d}x\\
+	&=\int_{a}^{b}[\frac{x^{y+1}}{y+1}]_{0}^{1}\mathrm{d}y\\
+	&=\int_{a}^{b}\frac{1}{y+1}\mathrm{d}y\\
+	&=[\ln\left|y+1\right|]_{a}^{b}\\
+	&=\ln\frac{b+1}{a+1}
+\end{align*}
+\noindent
+解法2：
+
+$$I(z)=\int_{0}^{1} \frac{x^{bz}-x^{az}}{\ln x}\mathrm{d}x$$
+\begin{align*}
+	I'(z)&=\int_{0}^{1} (bx^{bz}-ax^{az})\mathrm{d}x\\
+	     &=[\frac{bx^{bz+1}}{bz+1}-\frac{ax^{az+1}}{az+1}]_{0}^{1}\\
+	     &=\frac{b}{bz+1}-\frac{a}{az+1}
+\end{align*}
+$$I(z)=\ln \frac{bz+1}{az+1}$$
+$$\Rightarrow \int_{0}^{1}\frac{x^b-x^a}{\ln x}\mathrm{d}x =I(1)=\ln\frac{b+1}{a+1} $$

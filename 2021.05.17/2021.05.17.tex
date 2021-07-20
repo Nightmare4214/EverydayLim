@@ -1,0 +1,29 @@
+%2021.05.17
+\begin{mybox}{问题2021.05.17}
+	
+	\qquad 设$x_{1}=r>0,x_{n+1}=x_{n}+x_{n}^{3},n=1,2,3,\dots $,则数项级数$\sum\limits_{n=1}^{\infty} \frac{x_{n}}{1+x_{n}^2}=$\underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解：}
+显然$x_{n}>0$
+$$x_{n+1}=x_{n}+x_{n}^{3}\Rightarrow x_{n}^{2}=\frac{x_{n+1}}{x_{n}} -1$$
+\begin{align*}
+	\frac{x_{n}^2}{x_{n}+x_{n}^{3}}&=\frac{x_{n}^2}{x_{n+1}}\\
+	&=\frac{\frac{x_{n+1}}{x_{n}}-1}{x_{n+1}}\\
+	&=\frac{1}{x_{n}}-\frac{1}{x_{n+1}}
+\end{align*}
+\begin{align*}
+	\sum\limits_{n=1}^{\infty} \frac{x_{n}}{1+x_{n}^2}&=\sum\limits_{n=1}^{\infty}(\frac{1}{x_{n}}-\frac{1}{x_{n+1}})\\
+	&=\frac{1}{x_{1}}-\frac{1}{x_{n+1}}
+\end{align*}
+$$\frac{x_{n+1}}{x_{n}}=1+x_{n}^2>1$$
+$$\text{所以}x_{n}\text{单调递增}$$
+$$\text{假设}x_{n}\text{收敛},\text{设}\lim\limits_{n->\infty} x_{n}=A$$
+\begin{align*}
+	\lim \limits_{n\to\infty} x_{n+1}&=\lim\limits_{n\to\infty} (x_{n}+x_{n}^3)\\
+	A&=A+A^3\\
+	A&=0
+\end{align*}
+$$\text{与}x_{n}>0\text{矛盾}$$
+$$\Rightarrow \lim\limits_{n\to\infty} x_{n}=+\infty$$
+$$\Rightarrow \sum\limits_{n=1}^{\infty} \frac{x_{n}}{1+x_{n}^2}=\frac{1}{r}$$

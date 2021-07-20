@@ -1,0 +1,28 @@
+%2021.05.15
+\begin{mybox}{问题2021.05.15}
+	
+	\qquad 设$z=f(\sqrt{x^2+y^2})$,其中$f(u)$有二阶连续导数,$f(0)=f'(0)=0$,\\
+	且$\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2}-\frac{1}{x}\frac{\partial z}{\partial x}=z+\sqrt{x^2+y^2}$,求$f(u)$
+\end{mybox}
+\noindent
+\textbf{解：}
+令$u=\sqrt{x^2+y^2}$
+$$\frac{\partial z}{\partial x}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial x} = f'(u)\frac{x}{\sqrt{x^2+y^2}}$$
+$$\frac{\partial z}{\partial y}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial y} = f'(u)\frac{y}{\sqrt{x^2+y^2}}$$
+\begin{align*}
+\frac{\partial^2 z}{\partial x^2}&=f''(u) \frac{x^2}{x^2+y^2}+f'(u)\frac{\sqrt{x^2+y^2} -\frac{x^2}{\sqrt{x^2+y^2}}}{x^2+y^2}\\
+&=f''(u)\frac{x^2}{x^2+y^2}+f'(u)\frac{y^2}{(x^2+y^2)^{\frac{3}{2}}}
+\end{align*}
+$$\frac{\partial^2 z}{\partial y^2}=f''(u)\frac{y^2}{x^2+y^2}+f'(u)\frac{x^2}{(x^2+y^2)^{\frac{3}{2}}}$$
+\begin{align*}
+\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2}-\frac{1}{x}\frac{\partial z}{\partial x}&=z+\sqrt{x^2+y^2}\\
+f''(u)-f(u)&=u
+\end{align*}
+$$\lambda^2-\lambda=0$$
+$$\lambda = \pm 1$$
+$$ F(u)=C_{1} e^{u}+C_{2}e^{-u}$$
+$$\text{设}f^{*}(u)=au+b$$
+$$\text{代入得},a=-1,b=0$$
+$$f(u)=C_{1} e^{u}+C_{2}e^{-u}-u$$
+$$f(0)=f'(0)=0\Rightarrow C_{1}=\frac{1}{2},C_{2}=-\frac{1}{2}$$
+$$f(u)=\frac{1}{2}e^{u}-\frac{1}{2}e^{-u} -u$$

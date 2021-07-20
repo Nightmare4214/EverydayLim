@@ -1,0 +1,28 @@
+%2021.04.19
+\begin{mybox}{问题2021.04.19}
+	
+	\qquad 设$f(x)=\begin{cases}
+		e^x,&x\le 0\\
+		\ln x,&x<0
+	\end{cases} $,则$\int_{-1}^{x}tf(t)\mathrm{d}t=$\underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解}
+
+\noindent
+case 1:$x\ge 0$
+\begin{align*}
+	\int_{-1}^{x}tf(t)\mathrm{d}t&=\int_{-1}^{0}te^t\mathrm{d}t+\int_{0}^{x}t\ln t\mathrm{d}t\\
+	&=[(t-1)e^t]_{-1}^{0} + [\frac{t^2(2\ln t-1)}{4}]_{0}^{x}\\
+	&=-1+2e^{-1}+\frac{x^2(2\ln x -1)}{4}
+\end{align*}
+case 2:$x <0$
+\begin{align*}
+	\int_{-1}^{x}tf(t)\mathrm{d}t&=\int_{-1}^{x}te^t\mathrm{d}t\\
+	&=[(t-1)e^t]_{-1}^{x}\\
+	&=(x-1)e^x+2e^{-1}
+\end{align*}
+$$\Rightarrow \int_{-1}^{x}tf(t)\mathrm{d}t=\begin{cases}
+	-1+2e^{-1}+\frac{x^2(2\ln x -1)}{4},& x\ge 0\\
+	(x-1)e^x+2e^{-1},& x<0
+\end{cases}$$

@@ -1,0 +1,23 @@
+%2021.05.12
+\begin{mybox}{问题2021.05.12}
+	
+	\qquad 设$a_n=\int_{0}^{1} x^n \sqrt{1-x^2}\mathrm{d}x,b_n=\int_{0}^{\frac{\pi}{2}}\sin^n t\mathrm{d}t$,则极限$\lim\limits_{n\to \infty}\left[\frac{(n+1)a_n}{b_n} \right]^n=$\underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解：}
+$$\text{由点火公式(Wallis公式)}$$
+$$b_n=\frac{n-1}{n}b_{n-2}(n>2)$$
+\begin{align*}
+	a_n&=\int_{0}^{1} x^n \sqrt{1-x^2}\mathrm{d}x\\
+	   &=\int_{0}^{\frac{\pi}{2}}\sin^n t \cos t \cos t \mathrm{d}t\\ 
+	   &=\int_{0}^{\frac{\pi}{2}}\sin^n t \mathrm{d}t-\int_{0}^{\frac{\pi}{2}}\sin^{n+2} t\mathrm{d}t\\
+	   &=b_n-b_{n+2}\\
+	   &=b_n-\frac{n+1}{n+2}b_n\\
+	   &=\frac{1}{n+2}b_n
+\end{align*}
+\begin{align*}
+	\lim\limits_{n\to \infty}\left[\frac{(n+1)a_n}{b_n} \right]^n&=\lim \limits_{n\to \infty} \left[\frac{n+1}{n+2}\right]^n\\
+	&=\lim\limits_{n\to\infty} \left[1-\frac{1}{n+2}\right]^n\\
+	&=e^{\lim\limits_{n\to\infty} -\frac{n}{n+2}}\\
+	&=e^{-1}
+\end{align*}

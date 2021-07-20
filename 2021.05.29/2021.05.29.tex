@@ -1,0 +1,27 @@
+%2021.05.29
+\begin{mybox}{问题2021.05.29}
+	
+	\qquad 设$f(x)$是连续函数,$f(0)=0$,$\sum_{t}$为由圆柱面$x^2+y^2=t^2(t>0)$与$z=0,z=1$所围立体的全表面，取外侧,$f(t)=\oiint\limits_{\sum_{t}} 3xz^2\mathrm{d}y\mathrm{d}z+3xy^2\mathrm{d}z\mathrm{d}x+zf(\sqrt{x^2+y^2})\mathrm{d}x\mathrm{d}y$\\
+	求$f(t)$的表达式
+\end{mybox}	
+\noindent
+\textbf{解：}
+\begin{align*}
+	f(t)&=\oiint\limits_{\sum_{t}} 3xz^2\mathrm{d}y\mathrm{d}z+3xy^2\mathrm{d}z\mathrm{d}x+f(\sqrt{x^2+y^2})\mathrm{d}x\mathrm{d}y\\
+	&=\iiint\limits_{\Omega} (3z^2+6xy+f(\sqrt{x^2+y^2})\mathrm{d}V\\
+	&=\iiint\limits_{\Omega} (3z^2+f(\sqrt{x^2+y^2}) \mathrm{d}V\\
+	&=\int_{0}^{2\pi} \mathrm{d}\theta \int_{0}^{t} r\mathrm{d}r \int_{0}^{1} (3z^2+f(r))\mathrm{d}z\\
+	&=2\pi \int_{0}^{t}(1+f(r)r\mathrm{d}r\\
+	&=\pi t^2+2\pi\int_{0}^{t} rf(r)\mathrm{d}r
+\end{align*}
+\begin{align*}
+	f(t)&=\pi t^2+2\pi\int_{0}^{t} rf(r)\mathrm{d}r\\
+	f'(t)&=2\pi t+2\pi tf(t)\\
+	f'(t)-2\pi tf(t)&=2\pi t\\
+	f(t)&=e^{\int 2\pi t\mathrm{d} t} (\int 2\pi t e^{\int -2\pi t\mathrm{d} t} \mathrm{d}t+C)\\
+	f(t)&=e^{\pi t^2} (\int 2\pi t e^{-\pi t^2} \mathrm{d}t+C)\\
+	f(t)&=e^{\pi t^2} (-e^{-\pi t^2} +C)\\
+	f(t)&=Ce^{\pi t^2}-1
+\end{align*}
+$$f(0)=0\Rightarrow C=1$$
+$$f(t)=e^{\pi t^2}-1$$

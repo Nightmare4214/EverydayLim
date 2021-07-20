@@ -1,0 +1,19 @@
+%2021.04.23
+\begin{mybox}{问题2021.04.23}
+	
+	\qquad 设$\lim\limits_{x\to \infty} (\frac{1+x}{x})^{ax}=\int_{0}^{+\infty} \frac{1}{(1+x^2)(1+x^5)} \mathrm{d}x$，求$a$
+\end{mybox}
+\noindent
+\textbf{解}
+\begin{align*}
+	\lim\limits_{x \to\infty}(\frac{1+x}{x})^{ax}&=\lim\limits_{x\to\infty}(1+\frac{1}{x})^{ax}\\
+	&=e^{a}
+\end{align*}
+\begin{align*}
+	\int_{0}^{+\infty}\frac{1}{(1+x^2)(1+x^5)}\mathrm{d}x&=-\int_{+\infty}^{0}\frac{1}{(1+\frac{1}{u^2})(1+\frac{1}{u^5})u^2}\mathrm{d}u\\
+	&=\int_{0}^{+\infty}\frac{u^5}{(1+u^2)(1+u^5)}\mathrm{d}u\\
+	&=\frac{1}{2}\int_{0}^{+\infty}\frac{1}{1+x^2}\mathrm{d}x\\
+	&=\frac{1}{2}[\arctan x]_{0}^{+\infty}\\
+	&=\frac{\pi}{4}
+\end{align*}
+$$\Rightarrow a=\ln \frac{\pi}{4} $$

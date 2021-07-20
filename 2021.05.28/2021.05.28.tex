@@ -1,0 +1,23 @@
+%2021.05.28
+\begin{mybox}{问题2021.05.28}
+	
+	\qquad 设$f(x)$在$[0,1]$上有二阶导数，且$f(1)=0$,方程$f(x)=0$在$(0,1)$内有实根$x_{0}$,证明：\\
+	\qquad(\uppercase\expandafter{\romannumeral1})存在不同的$\xi_{1},\xi_{2}\in(0,1)$,使得$\xi_{1}f'(\xi_{1})+f(\xi_{1})=\xi_{2}f'(\xi_{2})+f(\xi_{2})=0$\\
+	\qquad(\uppercase\expandafter{\romannumeral2})若$f(0)<0$,且$\forall x\in(x_{0},1)$,有$f''(x)>0$,则存在一点$\eta\in(0,1)$,使得$f''(\eta)=0$
+\end{mybox}
+\noindent
+\textbf{解：}\\
+(\uppercase\expandafter{\romannumeral1})设$F(x)=xf(x)$\\
+$F(x)\in C[0,1]\cap D(0,1),F(0)=F(x_{0})=F(1)$\\
+$\Rightarrow \exists \xi_{1},\xi_{2} \in(0,1) ,F'(\xi_{1})=F'(\xi_{2})=0$\\
+\noindent
+(\uppercase\expandafter{\romannumeral2})\\
+$\exists \theta_{1}\in(0,x_{0}),f'(\theta_{1})=\frac{f(x_{0})-f(0)}{x_{0}-0}	>0$\\
+\noindent
+$f(x_{0})=f(1)=0$\\
+$\Rightarrow \exists\zeta_{1}\in(x_{0},1),f'(\zeta_{1})=0$\\
+$\forall x\in(x_{0},1),f''(x)>0$\\
+$\Rightarrow \exists \epsilon>0, \theta_{2}\in(\zeta_{1}-\epsilon,\zeta),f'(\theta_{2})<0$\\
+$f'(x)\in C[\theta_{1},\theta_{2}],f'(\theta_{1})f'(\theta_{2})<0$\\
+$\Rightarrow \exists \zeta_{2}\in(\theta_{1},\theta_{2}),f'(\zeta_{2})=0$\\
+$\Rightarrow \exists \eta \in(\zeta_{2},\zeta_{1})\subset (0,1),f''(\eta)=0$

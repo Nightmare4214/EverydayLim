@@ -1,0 +1,25 @@
+%2021.05.10
+\begin{mybox}{问题2021.05.10}
+	
+	\qquad 微分方程$\frac{\mathrm{d}^2 y}{\mathrm{d}x^2}+\frac{1}{1-y}(\frac{\mathrm{d}y}{\mathrm{d}x})^2=0$,满足条件$\left.y \right|_{x=0}=0,\left.\frac{\mathrm{d}y}{\mathrm{d}x}\right|_{x=0}=2 $的特解是$y=$\underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解：}
+设$p=y',y''=\frac{\mathrm{d}p}{\mathrm{d}y}p$
+\begin{align*}
+	\frac{\mathrm{d}^2 y}{\mathrm{d}x^2}+\frac{1}{1-y}(\frac{\mathrm{d}y}{\mathrm{d}x})^2&=0\\
+	\frac{\mathrm{d}p}{\mathrm{d}y}p+\frac{1}{1-y}p^2&=0\\
+	\frac{\mathrm{d}p}{\mathrm{d}y}+\frac{1}{1-y}p&=0\\
+	p&=C_{1}e^{-\int \frac{1}{1-y}\mathrm{d}y}\\
+	p&=C_{1}\left|y-1\right|\\
+	C_{1}&=2\\
+	\frac{\mathrm{d}y}{\mathrm{d}x}&=2\left|y-1\right|\\
+	\frac{\mathrm{d}y}{\mathrm{d}x}&=2(1-y)
+\end{align*}
+\begin{align*}
+	\frac{\mathrm{d}y}{\mathrm{d}x}+2y&=2\\
+	y&=e^{-\int 2\mathrm{d}x}(\int 2e^{\int 2\mathrm{d}x} \mathrm{d}x +C_{2})\\
+	y&=e^{-2x}(e^{2x}+C_{2})\\
+	C_{2}&=-1\\
+	y&=1-e^{-2x}
+\end{align*}

@@ -1,0 +1,26 @@
+%2021.05.20
+\begin{mybox}{问题2021.05.20}
+	
+	\qquad 微分方程$\frac{d^2 y}{d x^2}+(x+\sin y) (\frac{dy}{dx})^3=0$满足初始条件$y(0)=0,y'(0)=\frac{2}{3}$的特解是\underline{\hbox to 20mm{}}
+\end{mybox}
+\noindent
+\textbf{解：}
+$$\frac{dy}{dx}=\frac{1}{\frac{dx}{dy}}$$
+$$\frac{d^2y}{dx^2}=-\frac{\frac{d^2x}{dy^2}}{(\frac{dx}{dy})^3}$$
+\begin{align*}
+	\frac{d^2 y}{d x^2}+(x+\sin y) (\frac{dy}{dx})^3&=0\\
+	\frac{d^2 x}{dy^2}-x&=\sin y
+\end{align*}
+\begin{align*}
+	\lambda^2 -1&=0\\
+	\lambda&=\pm 1
+\end{align*}
+$$\text{通解}X=C_{1} e^{y}+C_{2}e^{-y}$$
+$$x^{*} =A\cos y+B\sin y$$
+$$x^{*'} =-A\sin y+B\cos y$$
+$$x^{*''}=-A\cos y-B\sin y$$
+$$\Rightarrow -2A\cos y-2B\sin y =\sin y$$
+$$\Rightarrow A=0,B=-\frac{1}{2}$$
+$$\Rightarrow x=C_{1} e^{y}+C_{2}e^{-y}-\frac{1}{2}\sin y$$
+$$y(0)=0,y'(0)=\frac{2}{3} \Rightarrow C_{1}=1,C_{2}=-1$$
+$$\Rightarrow x=e^y-e^{-y} -\frac{1}{2}\sin y$$

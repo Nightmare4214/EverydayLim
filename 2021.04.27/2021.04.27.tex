@@ -1,0 +1,32 @@
+%2021.04.27
+\begin{mybox}{问题2021.04.27}
+	
+	\qquad 求正数a,b的值，使得椭圆$\frac{x^2}{a^2}+\frac{y^2}{b^2}=1$包含圆$x^2+y^2=2y$,且面积最小.
+\end{mybox}
+\noindent
+\textbf{解：}
+
+椭圆包含圆，且面积最小，必然相切,联立 $\begin{cases}
+	
+	\frac{x^2}{a^2}+\frac{y^2}{b^2}=1\\
+	x^2+y^2=2y
+	
+\end{cases}$\\
+$$\Rightarrow (a^2-b^2)y^2+2b^2 y-a^2b^2=0$$
+$$\Rightarrow \Delta =4b^4+4a^2b^2(a^2-b^2)=0$$
+$$\Rightarrow b^2+a^4-a^2b^2=0$$
+$$\text{由拉格朗日乘数法}$$
+$$L(a,b,\lambda)= ab+ \lambda(b^2+a^4-a^2b^2) $$
+\begin{equation*}
+	\left\{
+	\begin{aligned}
+		L'_{a}&=b+4a^3\lambda -2ab^2\lambda=0\\
+		L'_{b}&=a+2b\lambda-2a^2b\lambda=0\\
+		L'_{\lambda}&=b^2+a^4-a^2b^2=0
+	\end{aligned}
+	\right.
+\end{equation*}
+$$\Rightarrow \begin{cases}
+	a=\frac{\sqrt{6}}{2}\\
+	b=\frac{3\sqrt{2}}{2}
+\end{cases} $$
