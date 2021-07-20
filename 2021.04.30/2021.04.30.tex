@@ -37,8 +37,8 @@
 	&\Rightarrow \text{可偏导}
 \end{align*}
 \begin{align*}
-	\lim \limits_{\rho \to 0} \frac{f(x,y)-f'_{x}(0,0)x-f'_{y}(0,0)y -f(0,0)}{\rho} &= \lim\limits_{x\to 0 \atop y \to 0} \frac{x^2 y}{(x^2+y^2)^{\frac{3}{2}}}\\
-	&= \lim\limits_{y=kx \atop x \to 0} \frac{kx^3}{(1+k^2)^{\frac{3}{2}}x^3}\\
-	&=  \lim\limits_{y=kx \atop x \to 0} \frac{k}{(1+k^2)^{\frac{3}{2}}}\\
+	\lim \limits_{\rho \to 0} \frac{f(x,y)-f'_{x}(0,0)x-f'_{y}(0,0)y -f(0,0)}{\rho} &= \lim\limits_{\substack{x\to 0 \\ y \to 0}} \frac{x^2 y}{(x^2+y^2)^{\frac{3}{2}}}\\
+	&= \lim\limits_{\substack{y=kx \\ x \to 0}} \frac{kx^3}{(1+k^2)^{\frac{3}{2}}x^3}\\
+	&=  \lim\limits_{\substack{y=kx \\ x \to 0}} \frac{k}{(1+k^2)^{\frac{3}{2}}}\\
 \end{align*}
 $$\Rightarrow \text{结果与k有关，所以不可微，选D}$$
