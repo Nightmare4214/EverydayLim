@@ -1,0 +1,784 @@
+\documentclass[a4paper]{article}
+\usepackage{ctex}% 中文支持
+\usepackage{geometry}% 用于页面设置
+\usepackage[dvipsnames, svgnames, x11names]{xcolor} % 颜色支持
+\usepackage[
+colorlinks=true,
+linkcolor=Navy,
+urlcolor=Navy,
+citecolor=Navy,
+anchorcolor=Navy
+]{hyperref}
+\usepackage{tcolorbox}% 支持更好的文本框
+\tcbuselibrary{skins, breakable}% 支持文本框跨页
+\usepackage[english]{babel}% 载入美式英语断字模板
+\usepackage{subfigure}
+\usepackage{amsmath}
+\usepackage{fancyhdr}
+\usepackage{tasks}
+\usepackage{esint}
+\usepackage{pifont}
+\usepackage{lmodern}
+\pagestyle{fancy}
+\lhead{}
+\chead{lim杯}
+\rhead{}
+\lfoot{作者Nightmare4214}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newtcolorbox{mybox}[1]{enhanced, colback=GhostWhite, colframe=LightGray, coltitle=black,fonttitle=\bfseries\Large, bottomrule=1ex, breakable=true,title=#1}
+
+\begin{document}
+{\centering\section*{lim杯数学方面综合比赛（试题）}}
+\noindent
+\textbf{注意事项：}\\
+\begin{enumerate}
+    \item \text{建议闭卷，如果自己开卷莉姆丝在看着你。}
+    \item \text{内容以高数、线代和概率论为主，另有文学类题目。}
+    \item \text{答题后将答案（仅答案，无需试题原题，注意标明题号）发送至邮箱}\\
+    \textcolor{blue}{2280883416@qq.com}\text{（即莉姆丝账号的QQ邮箱），暂不接受其他方式提交。如果有莉}\\
+    \text{姆丝粉丝牌记得截图（等级）发过来，有小加分（1级1分，上限10分），附在提交的答}\\
+    \text{案尾页}
+    \item \text{本卷正式题目总分250分，附加题（小作文）50分，共计300分。如果只想做附加题，}\\
+    \text{在发送的答案前标明，将按照满分300分对附加题进行评分。}
+    \item \text{友谊第一，比赛第二。}
+\end{enumerate}
+\textbf{参考公式：}\\
+醒醒，公式都不记还想我给你写？\\
+\textbf{零、成分查询题（共一题，答对不计分，答错扣300分}\\
+在这里该单推的粉毛是谁？\\
+
+\begin{figure}[ht]
+    \begin{minipage}{0.24\linewidth}
+        \centerline{\includegraphics[width=1\textwidth]{taffy.PNG}}
+        \centerline{A.永雏塔菲}
+    \end{minipage}
+    \begin{minipage}{0.24\linewidth}
+        \centerline{\includegraphics[width=1\textwidth]{aqua.PNG}}
+        \centerline{B.阿夸}
+    \end{minipage}
+    \begin{minipage}{0.24\linewidth}
+        \centerline{\includegraphics[width=1\textwidth]{hirro.PNG}}
+        \centerline{C.hirro}
+    \end{minipage}
+    \begin{minipage}{0.24\linewidth}
+        \centerline{\includegraphics[width=1\textwidth]{lim.PNG}}
+        \centerline{D.莉姆丝}
+    \end{minipage}
+    % \caption*{都是表情图}
+\end{figure}
+
+\newpage
+{\centering\section*{lim杯数学方面综合比赛（试题）}}
+\noindent
+\textbf{一、选择题（每题6分共10题，共计60分）}\\
+在每小题给出的四个选项中，只有一项是符合题目要求的。\\
+1.设m与n都是常数，若反常积分$\int_{0}^{+\infty} \frac{x^n(1-e^{-x})}{(1+x)^{m}}\mathrm{d}x$收敛，则m与n的取值\\
+范围为（\quad）.\\
+A.$n>-2,m>n+1$\quad B.$n>-2,m<n+1$\quad C.$n<-2,m<n+1$\quad D.$n<-2,m>n+1$\\
+\textbf{解：}
+\begin{align*}
+	\lim \limits_{x \to 0^{+}} x^{-(n+1)}\: \frac{x^n(1-e^{-x})}{(1+x)^m}=1
+\end{align*}
+$$\Rightarrow -(n+1)<1$$
+$$\Rightarrow n>-2$$
+\begin{align*}
+	\lim \limits_{x \to +\infty} x^{m-n}\:\frac{x^n(1-e^{-x})}{(1+x)^m}=1
+\end{align*}
+$$\Rightarrow m-n>1$$
+$$\Rightarrow m>n+1$$
+$$\Rightarrow \text{选A}$$
+2.在曲线$x=t,y=-t^2,z=t^3$的所有切线中，与平面$27x+54y+27z=4$平行的切线（\quad）.\\
+A.只有一条\hfill B.只有两条\hfill C.只有三条\hfill D.不存在\\
+\textbf{解：}
+$$\text{曲线切向量}(1,-2t,3t^2)$$
+$$\text{平面法向量}(27,54,27)$$
+\begin{align*}
+	(27,54,27)\cdot (1,-2t,3t^2) &=0\\
+	27(1-4t+3t^2)&=0\\
+	(t-1)(3t-1)&=0
+\end{align*}
+$$\Rightarrow t=1\text{或}\frac{1}{3}$$
+$$t=1,(1,-1,1)\text{不在平面内}$$
+$$t=\frac{1}{3},(\frac{1}{3},-\frac{1}{9},\frac{1}{27})\text{在平面内，舍去}$$
+$$\Rightarrow \text{选A}$$
+\newpage
+\noindent
+3.微分方程$y''+y'+y=e^{-\frac{1}{2}x}\sin \frac{\sqrt{3}}{2}x$的一个特解应具有形式（其中a,b为常数）（\quad）.\\
+A.$e^{-\frac{1}{2}x}\left(a\sin \frac{\sqrt{3}}{2}x + bx\cos\frac{\sqrt{3}}{2}x \right)$\hfill
+B.$e^{-\frac{1}{2}x}\left(a\cos \frac{\sqrt{3}}{2}x + b\sin\frac{\sqrt{3}}{2}x \right)$\\
+C.$xe^{-\frac{1}{2}x}\left(a\cos \frac{\sqrt{3}}{2}x + b\sin\frac{\sqrt{3}}{2}x \right)$\hfill
+D.$e^{-\frac{1}{2}x}\left(a\cos \frac{\sqrt{3}}{2}x + bx\sin\frac{\sqrt{3}}{2}x \right)$\\
+\textbf{解：}
+\begin{align*}
+    \lambda^2 + \lambda +1 &=0\\
+    \lambda&=\frac{-1 \pm 3i}{2}
+\end{align*}
+%$$Y=e^{-\frac{1}{2}x} \left(C_1 \cos \frac{\sqrt{3}}{2}x + C_2 \sin \frac{\sqrt{3}}{2}x \right)$$
+$$y^{*}=xe^{-\frac{1}{2}x}\left(A\cos \frac{\sqrt{3}}{2}x+B\sin \frac{\sqrt{3}}{2}x\right)$$
+$$\Rightarrow \text{选C}$$
+4.利用变量代换$u=x,v=\frac{y}{x}$,可将方程$x\frac{\partial z}{\partial x}+y\frac{\partial z}{\partial y}=z$化为新方程（\quad）.\\
+A.$u\frac{\partial z}{\partial u}=z$\hfill B.$v\frac{\partial z}{\partial v}=z$\hfill C.$u\frac{\partial z}{\partial v}=z $\hfill  D.$v\frac{\partial z}{\partial u}=z$\\
+\textbf{解：}
+$$\frac{\partial z}{\partial x}=\frac{\partial z}{\partial u}-\frac{y}{x^2}\frac{\partial z}{\partial v}$$
+$$\frac{\partial z}{\partial y}=\frac{1}{x}\frac{\partial z}{\partial v}$$
+$$x=u,y=xv=uv$$
+\begin{align*}
+    x\frac{\partial z}{\partial x}+y\frac{\partial z}{\partial y}&=z\\
+    u\frac{\partial z}{\partial u}-u\frac{uv}{u^2}\frac{\partial z}{\partial v}+uv\frac{1}{u}\frac{\partial z}{\partial v}&=z\\
+    u\frac{\partial z}{\partial u}=z
+\end{align*}
+$$\Rightarrow \text{选A}$$
+5.设函数$f(t)$ 连续，区域$D=\{\left. \left(x,y\right) \right| x^2+y^2\le 2y \}$,则$\iint\limits_{D}f(xy)\mathrm{d}x\mathrm{d}y=$（\quad）.\\
+A.$\int_{-1}^{1}\mathrm{d}x\int_{-\sqrt{1-x^2}}^{\sqrt{1+x^2}}f(xy)\mathrm{d}y$\hfill
+B.$\int_{0}^{2}\mathrm{d}y\int_{0}^{\sqrt{2y-y^2}}f(xy)\mathrm{d}x$\\
+C.$\int_{0}^{\pi}\mathrm{d}\theta\int_{0}^{2\sin \theta}f(r^2\sin\theta\cos\theta)\mathrm{d}r$\hfill
+C.$\int_{0}^{\pi}\mathrm{d}\theta\int_{0}^{2\sin \theta}f(r^2\sin\theta\cos\theta)r\mathrm{d}r$\\
+\textbf{解：}
+\begin{align*}
+    &\quad \iint\limits_{D}f(xy)\mathrm{d}x\mathrm{d}y\\
+    &= \int_{-1}^{1}\mathrm{d}x\int_{-1-\sqrt{1-x^2}}^{-1+\sqrt{1+x^2}}f(xy)\mathrm{d}y\\
+    &= \int_{0}^{2}\mathrm{d}y\int_{-\sqrt{2y-y^2}}^{\sqrt{2y-y^2}}f(xy)\mathrm{d}x\\
+    &= \int_{0}^{\pi}\mathrm{d}\theta\int_{0}^{2\sin \theta}f(r^2\sin\theta\cos\theta)r\mathrm{d}r
+\end{align*}
+$$\Rightarrow \text{选D}$$
+6.设$A,B$是$n$阶实对称可逆矩阵，则存在$n$阶可逆矩阵$P$，使下列关系式\\
+\centerline{
+    \ding{172}$PA=B;$ 
+    \ding{173}$P^{-1}ABP=BA;$
+    \ding{174}$P^{-1}AP=B;$ 
+    \ding{175}$P^T A^2 P =B^2$.}
+成立的个数为（\quad ）.\\
+A.1\hfill B.2\hfill C.3 \hfill D.4\\
+\textbf{解：}
+$$P=BA^{-1}\text{可逆}$$
+$$\Rightarrow PA=BA^{-1}A=B$$
+$$\Rightarrow  \text{\ding{172}成立}$$
+$$P=A\text{可逆}$$
+$$\Rightarrow P^{-1}ABP=A^{-1}ABA=BA$$
+$$\Rightarrow  \text{\ding{173}成立}$$
+$$A=\begin{pmatrix}
+    1&0&0\\
+    0&1&0\\
+    0&0&1\\
+\end{pmatrix}$$
+$$B=\begin{pmatrix}
+    1&0&0\\
+    0&3&0\\
+    0&0&5\\
+\end{pmatrix}$$
+$$\text{特征值不相同}\Rightarrow A\text{不相似于}B \Rightarrow \text{\ding{174}不成立}$$
+$$\Rightarrow \text{\ding{175}不成立}$$
+$$\Rightarrow \text{选B}$$
+\newpage
+\noindent
+7.$\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5$均是4维列向量,记$A=\left(\alpha_1,\alpha_2,\alpha_3,\alpha_4 \right),B=\left(\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5 \right)$.\\
+已知方程组$Ax=\alpha_5$有通解$k\left(1,-1,2,0\right)^T+\left(2,1,0,1\right)^T$,其中$k$是任意常数，则下列\\
+向量不是方程组$Bx=0$的解的是（\quad）.\\
+A.$\left(1,-2,-2,0,-1\right)^T$\hfill
+B.$\left(0,3,-4,1,-1\right)^T$\hfill
+C.$\left(2,1,0,1,-1\right)^T$\hfill
+D.$\left(3,0,2,1,-1\right)^T$\\
+\textbf{解：}
+$$A\begin{pmatrix}
+    2\\
+    1\\
+    0\\
+    1\\
+\end{pmatrix} =\alpha_5$$
+$$\Rightarrow 2\alpha_1+\alpha_2+\alpha_4=\alpha_5$$
+$$B\begin{pmatrix}
+    1\\
+    -2\\
+    -2\\
+    0\\
+    -1\\
+\end{pmatrix} =\alpha_1-2\alpha_2-2\alpha_3-\alpha_5=0$$
+$$\Rightarrow A\begin{pmatrix}
+    1\\
+    -2\\
+    -2\\
+    0\\
+\end{pmatrix} \neq \alpha_5$$
+$$\Rightarrow \text{选A}$$
+8.二次型$f\left(x_1,x_2,x_3\right)=x^T \begin{bmatrix}
+    1&0&2\\
+    -2&-3&2\\
+    0&-8&0\\
+\end{bmatrix}x$的秩为（\quad）.\\
+A.0\hfill B.1\hfill C.2\hfill D.3\\
+\textbf{解：}
+$$f\left(x_1,x_2,x_3\right)=x^T \begin{bmatrix}
+    1&-1&1\\
+    -1&-3&-3\\
+    1&-3&0\\
+\end{bmatrix}x$$
+$$\begin{bmatrix}
+    1&-1&1\\
+    -1&-3&-3\\
+    1&-3&0\\
+\end{bmatrix} \rightarrow \begin{bmatrix}
+    1&-1&1\\
+    0&-4&-2\\
+    0&-2&-1\\
+\end{bmatrix} \rightarrow \begin{bmatrix}
+    1&-1&1\\
+    0&-2&-1\\
+    0&0&0\\
+\end{bmatrix}$$
+$$\Rightarrow \text{选C}$$
+\newpage
+\noindent
+9.设随机变量$X\sim B\left(4,\frac{2}{3}\right),Y\sim B\left(8,\frac{4}{5}\right)$,且相关系数$\rho_{XY}=-1$,则（\quad）.\\
+A.$P\left\{Y=-1.2X-9.6\right\}=1$\hfill
+B.$P\left\{Y=-1.2X+9.6\right\}=1$\\
+C.$P\left\{Y=-1.2X-3.2\right\}=1$\hfill
+D.$P\left\{Y=-1.2X+3.2\right\}=1$\\
+\textbf{解：}
+  设$Y=aX+b$
+  $$E(X)=\frac{8}{3},D(X)=\frac{8}{9},E(Y)=\frac{16}{5},D(Y)=\frac{16}{25}$$
+  \begin{align*}
+    Cov(X,Y)&=\rho_{XY}\sqrt{D(X)}\sqrt{D(Y)}\\
+            &=-\frac{16}{15}
+  \end{align*}
+  $$a=\frac{Cov(X,Y)}{D(X)}=-\frac{6}{5}=-1.2$$
+  $$b=E(Y)-E(X)\frac{Cov(X,Y)}{D(X)}=\frac{48}{5}=9.6$$
+  $$\Rightarrow \text{选B}$$
+10.设总体$X\sim N\left(a,\sigma^2 \right),Y\sim N(b,\sigma^2)$,且相互独立，分别从$X$和$Y$中各抽取容\\
+量为9和10的简单随机样本，记他们的方差分别为$S_X^2$和$S_Y^2$,并记
+$S_{12}^2=\frac{1}{2}\left(S_X^2+S_Y^2\right)$\\和$S_{XY}^2=\frac{1}{18}\left(8S_X^2+10S_Y^2\right)$,
+则这四个统计量$S_X^2,S_Y^2,S_{12}^2,S_{XY}^2$中，方差最小的是（\quad）.\\
+A.$S_X^2$\hfill B.$S_Y^2$ \hfill C.$S_{12}^2$ \hfill D.$S_{XY}^2$\\
+\textbf{解：}
+$$\frac{(9-1)S_X^2}{\sigma^2} \sim \chi(9-1)$$
+\begin{align*}
+    D(\chi(9-1))&=D(\frac{(9-1)S_X^2}{\sigma^2})\\
+    2(9-1)&=\frac{8^2}{\sigma^4}D(S_X^2)\\
+    D(S_X^2)&=\frac{\sigma^4}{4}
+\end{align*}
+$$\frac{(10-1)S_Y^2}{\sigma^2} \sim \chi(10-1)$$
+\begin{align*}
+    D(\chi(10-1))&=D(\frac{(10-1)S_Y^2}{\sigma^2})\\
+    2(10-1)&=\frac{9^2}{\sigma^4}D(S_Y^2)\\
+    D(S_Y^2)&=\frac{2\sigma^4}{9}
+\end{align*}
+$$D(S_{12}^2)=\frac{1}{4}(\frac{\sigma^4}{4}+\frac{2\sigma^4}{9})=\frac{17}{144}\sigma^4$$
+$$D(S_{XY}^2)=\frac{1}{18^2}(8^2\frac{\sigma^4}{4}+10^2\frac{2\sigma^4}{9})=\frac{86}{729}\sigma^4$$
+$$D(S_X^2)>D(S_Y^2)>D(S_{12}^2)>D(S_{XY}^2)\Rightarrow \text{选D}$$
+\noindent
+\textbf{二、填空题（每题6分共10题，共计60分}\\
+11.设$x>0$且$x\neq 1$,则$\lim\limits_{n\to \infty }n^2\left(\sqrt[n-1]{x}-\sqrt[n]{x}\right)=$\underline{\hbox to 20mm{}}.\\
+\textbf{解：}
+\begin{align*}
+    \lim\limits_{n\to\infty} n^2\left(\sqrt[n-1]{x}-\sqrt[n]{x}\right)
+    &=\lim\limits_{n\to \infty} n^2 \left(e^{\frac{\ln x}{n-1}}-e^{\frac{\ln x}{n}}\right)\\
+    &=\lim\limits_{n\to\infty} n^2 e^{\frac{\ln x}{n}} \left(e^{\frac{\ln x}{n(n-1)}}-1\right)\\
+    &=\lim\limits_{n\to\infty} \frac{n^2\ln x}{n(n-1)}\\
+    &=\ln x
+\end{align*}
+12.设函数$f(x)$ 在$\left[1,+\infty\right)$ 上连续$\int_{1}^{+\infty} f(x)\mathrm{d}x $ 收敛,则满足\\
+$f(x)=\frac{\ln x}{(1+x)^2}+\frac{1+x^2}{1+x^4}\int_{1}^{+\infty}f(x)\mathrm{d}x$,则$\int_{1}^{+\infty} f(x)\mathrm{d}x=$\underline{\hbox to 20mm{}}.\\
+\textbf{解：}
+因为收敛,设$A=\int_{1}^{+\infty} f(x)\mathrm{d}x$
+\begin{align*}
+    f(x)&=\frac{\ln x}{(1+x)^2}+\frac{1+x^2}{1+x^4}\int_{1}^{+\infty}f(x)\mathrm{d}x\\
+    A &=\int_{1}^{+\infty} \frac{\ln x}{(1+x)^2} \mathrm{d}x +A\int_{1}^{+\infty} \frac{1+x^2}{1+x^4}\mathrm{d}x\\
+    A&=\left. -\frac{\ln x}{1+x} \right|_{1}^{+\infty} +\int_{1}^{+\infty} \frac{1}{x(1+x)}\mathrm{d} x +A\int_{0}^{1}\frac{1+x^2}{1+x^4}\mathrm{d} x \\
+    A&=\left. \ln \frac{x}{1+x}\right|_{1}^{+\infty} +\frac{A}{2}\int_{0}^{+\infty} \frac{1+x^2}{1+x^4}\mathrm{d} x\\
+    A&=\ln 2 +\frac{A\pi i}{2}\left[Res\left[\frac{1+z^2}{1+z^4},e^{i\frac{\pi}{4}}\right] +Res\left[\frac{1+z^2}{1+z^4},e^{i\frac{3\pi}{4}}\right]  \right]\\
+    A&=\ln 2 +\frac{A\pi i}{2}\left[-\frac{e^{i\frac{ \pi }{4}}+e^{i\frac{ 3\pi }{4}}}{4}-\frac{e^{i\frac{ \pi }{4}}+e^{i\frac{ 3\pi }{4}}}{4} \right]\\
+    A&=\ln 2 +\frac{\sqrt{2}\pi}{4}A\\
+    A&=\frac{-\ln 2}{\frac{\sqrt{2}\pi}{4}-1}\\
+    A&=\frac{4\ln 2}{4-\sqrt{2}\pi}
+\end{align*}
+\newpage
+\noindent
+13.设函数$f(x,y)$在区域$D=\{x^2+y^2\le 1 \}$上连续，且满足\\
+	$(f''_{xx}+f''_{yy})e^{x^2+y^2}=1$,则$\iint \limits_D xf'_{x}+yf'_{y}\mathrm{d}\sigma$\underline{\hbox to 20mm{}}.\\
+\textbf{解：}
+
+\begin{align*}
+    \iint\limits_{D} xf'_{x}+yf'_{y}\mathrm{d}\sigma &=\int_{0}^{2\pi} \mathrm{d}\theta \int_{0}^{1}(\rho\cos \theta f'_{x}+\rho\sin \theta f'_{y})\rho \mathrm{d}\rho\\
+    &=\int_{0}^{1} \rho\mathrm{d}\rho \int_{0}^{2\pi} (\frac{\mathrm{d} y}{\mathrm{d} \theta}f'_{x}-\frac{\mathrm{d} x}{\mathrm{d} \theta}f'_{y})\mathrm{d}\theta\\
+    &=\int_{0}^{1}\rho\mathrm{d}\rho\int_{0}^{2\pi}-f'_{y}\mathrm{d}x+f'_{x}\mathrm{d}y\\
+    &=\int_{0}^{1}\rho\mathrm{d}\rho \iint\limits_{x^2+y^2\le \rho} (f''_{xx}+f''_{yy})d\sigma\\
+    &=\int_{0}^{1}\rho\mathrm{d}\rho \iint\limits_{x^2+y^2\le \rho} e^{-(x^2+y^2)}d\sigma\\
+    &=\int_{0}^{1}\rho \mathrm{d}\rho \int_{0}^{2\pi}\mathrm{d} \theta \int_{0}^{\rho} e^{-r^2} r\mathrm{d}r\\
+    &=\int_{0}^{1}\rho \mathrm{d}\rho \int_{0}^{2\pi} \left. \frac{e^{-r^2}}{-2} \right|_{0}^{\rho} \mathrm{d} \theta\\
+    &=\int_{0}^{1} \rho \mathrm{d}\rho \int_{0}^{2\pi}\frac{1-e^{-\rho^2}}{2}\mathrm{d}\theta \\
+    &=\pi\int_{0}^{1} (1-e^{-\rho^2})\rho \mathrm{d}\rho\\
+    &=\left.\pi(\frac{\rho^2}{2}+\frac{e^{-\rho^2}}{2})\right|_{0}^{1}\\
+    &=\frac{\pi}{2e}
+\end{align*}
+14.设$z=f(\sqrt{x^2+y^2})$,其中$f(u)$有二阶连续导数,$f(0)=f'(0)=0$,\\
+且$\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2}-\frac{1}{x}\frac{\partial z}{\partial x}=z+\sqrt{x^2+y^2}$,求$f(u)=$\underline{\hbox to 20mm{}}.\\
+\textbf{解：}
+令$u=\sqrt{x^2+y^2}$
+$$\frac{\partial z}{\partial x}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial x} = f'(u)\frac{x}{\sqrt{x^2+y^2}}$$
+$$\frac{\partial z}{\partial y}=\frac{\partial z}{\partial u}\frac{\partial u}{\partial y} = f'(u)\frac{y}{\sqrt{x^2+y^2}}$$
+\begin{align*}
+\frac{\partial^2 z}{\partial x^2}&=f''(u) \frac{x^2}{x^2+y^2}+f'(u)\frac{\sqrt{x^2+y^2} -\frac{x^2}{\sqrt{x^2+y^2}}}{x^2+y^2}\\
+&=f''(u)\frac{x^2}{x^2+y^2}+f'(u)\frac{y^2}{(x^2+y^2)^{\frac{3}{2}}}
+\end{align*}
+$$\frac{\partial^2 z}{\partial y^2}=f''(u)\frac{y^2}{x^2+y^2}+f'(u)\frac{x^2}{(x^2+y^2)^{\frac{3}{2}}}$$
+\begin{align*}
+\frac{\partial^2 z}{\partial x^2}+\frac{\partial^2 z}{\partial y^2}-\frac{1}{x}\frac{\partial z}{\partial x}&=z+\sqrt{x^2+y^2}\\
+f''(u)-f(u)&=u
+\end{align*}
+$$\lambda^2-\lambda=0$$
+$$\lambda = \pm 1$$
+$$ F(u)=C_{1} e^{u}+C_{2}e^{-u}$$
+$$\text{设}f^{*}(u)=au+b$$
+$$\text{代入得},a=-1,b=0$$
+$$f(u)=C_{1} e^{u}+C_{2}e^{-u}-u$$
+$$f(0)=f'(0)=0\Rightarrow C_{1}=\frac{1}{2},C_{2}=-\frac{1}{2}$$
+$$f(u)=\frac{1}{2}e^{u}-\frac{1}{2}e^{-u} -u$$
+15.求直线$L: \frac{x-3}{2} = \frac{y-1}{3} = z+1$绕直线$L_{1}:\begin{cases} 
+	x=2\\
+	y=3		
+	\end{cases}$ 旋转一周所成的曲面方程\underline{\hbox to 20mm{}}.\\
+\textbf{解：}
+$L$的参数方程$\begin{cases}
+x=3+2t\\
+y=1+3t\\
+z=-1+t
+\end{cases}$\\
+设$(x_{0},y_{0},z_{0})$为$L$上的一点，$(x,y,z)$为$(x_{0},y_{0},z_{0})$绕$L_{1}$旋转后的在曲面方程上的一点
+$$\begin{cases}
+(x-2)^2+(y-3)^2+z^2=(x_{0}-2)^2+(y_{0}-3)^2+z_{0}^2\\
+z=z_{0}\\
+x_{0}=3+2t\\
+y_{0}=1+3t\\
+t=z+1
+
+\end{cases}$$
+$$\Rightarrow x^2+y^2-13z^2-4x-6y-18z+3=0$$
+16.设$A=E+\alpha \beta^T$,其中$\alpha,\beta$均为n维列向量，$\alpha^T\beta=3$,则$\left| A+2E\right|=$\underline{\hbox to 20mm{}}\\
+\textbf{解：}
+$$\text{设}\alpha \text{是}n\text{维列向量}$$
+$$\alpha^T \beta=3 \Rightarrow \alpha\neq=0 ,\beta \neq=0\Rightarrow r(\alpha\beta^T)=1$$
+$$\alpha \beta ^T \alpha=3\alpha$$
+$$\alpha \beta ^T \text{特征值为}3,n-1\text{个} 0$$
+$$A+2E=3E+\alpha \beta ^T \text{特征值为}6,n-1\text{个} 3$$
+$$\left| A+2E\right|=2\cdot 3^n$$
+17.设$A$是3阶实对称矩阵，$\lambda =5$是$A$的二重特征值,对应的特征向量为\\
+$\xi_1=\left[1,-1,2\right]^T,\xi_2=\left[1,2,1\right]^T$,则二次型$f(x_1,x_2,x_3)=x^T A x$在$x_0=\left[1,5,0\right]^T$的值\\
+$f(1,5,0)=$\underline{\hbox to 20mm{}}.\\
+\textbf{解：}
+设$\lambda_1=\lambda_2=5,\lambda_3$为$A$的特征值，对应的特征向量为$\xi_1,\xi_2,\xi_3$
+$$\xi_1^T \xi_3=0,\xi_2^T \xi_3=0$$
+$$\begin{cases}
+    x_1-x_2+2x_3=0\\
+    x_1+x_2+x_3=0
+\end{cases}$$
+$$\Rightarrow \xi_3=\begin{pmatrix}
+    -5\\
+    1\\
+    3\\
+\end{pmatrix}$$
+$$x_0=-\xi_1+2\xi_2=\left(\xi_1,\xi_2,\xi_3\right) \left(-1,2,0\right)^T$$
+\begin{align*}
+    f(1,5,0)&=x_0^T A x_0\\
+    &=(-1,2,0)\begin{pmatrix}
+        \xi_1^T\\
+        \xi_2^T\\
+        \xi_3^T
+    \end{pmatrix}A (\xi_1,\xi_2,\xi_3)\begin{pmatrix}
+        -1\\
+        2\\
+        0
+    \end{pmatrix}\\
+    &=(-\xi_1+2\xi_2)^T(5\xi_1,5\xi_2,\lambda \xi_3)\begin{pmatrix}
+        -1\\
+        2\\
+        0
+    \end{pmatrix}\\
+    &=5(-\xi_1+2\xi_2)^T(-\xi_1+2\xi_2)\\
+    &=130
+\end{align*}
+18.设$A$是三阶矩阵，$b=\left[9,18,-18\right]^T$,方程组$Ax=b$有通解\\
+$k_1\left[-2,1,0\right]^T+k_2\left[2,0,1\right]^T+\left[1,2,-2\right]^T$,
+其中$k_1,k_2$是任意常数,则$A^{100}=$\underline{\hbox to 20mm{}}\\
+\textbf{解：}
+设$\alpha_1=\begin{pmatrix}
+    -2\\
+    1\\
+    0\\
+\end{pmatrix},\alpha_2=\begin{pmatrix}
+    2\\
+    0\\
+    1\\
+\end{pmatrix},\alpha_3=\begin{pmatrix}
+    1\\
+    2\\
+    -2\\
+\end{pmatrix}$
+$$\alpha_1,\alpha_2,\alpha_3\text{线性无关}$$
+$$A\alpha_1 =0\alpha_1$$
+$$A\alpha_2=0\alpha_2$$
+$$A\alpha_3=b=9\alpha_3$$
+$$\text{所以}A\text{特征值为}0,0,9$$
+设$P=(\alpha_1,\alpha_2,\alpha_3)$
+$$P^{-1}AP=diag(0,0,9)$$
+\begin{align*}
+    \begin{pmatrix}
+        -2&2&1&1&0&0\\
+        1&0&2&0&1&0\\
+        0&1&-2&0&0&1\\
+    \end{pmatrix} & \rightarrow \begin{pmatrix}
+        1&0&2&0&1&0\\
+        0&1&-2&0&0&1\\
+        -2&2&1&1&0&0\\
+    \end{pmatrix}\\
+    &\rightarrow \begin{pmatrix}
+        1&0&2&0&1&0\\
+        0&1&-2&0&0&1\\
+        0&2&5&1&2&0\\
+    \end{pmatrix}\\
+    &\rightarrow \begin{pmatrix}
+        1&0&2&0&1&0\\
+        0&1&-2&0&0&1\\
+        0&0&9&1&2&-2\\
+    \end{pmatrix}\\
+    &\rightarrow \begin{pmatrix}
+        1&0&2&0&1&0\\
+        0&1&-2&0&0&1\\
+        0&0&1&\frac{1}{9}&\frac{2}{9}&-\frac{2}{9}\\
+    \end{pmatrix}\\
+    &\rightarrow \begin{pmatrix}
+        1&0&0&-\frac{2}{9}&\frac{5}{9}&\frac{4}{9}\\
+        0&1&0&\frac{2}{9}&\frac{4}{9}&\frac{5}{9}\\
+        0&0&1&\frac{1}{9}&\frac{2}{9}&-\frac{2}{9}\\
+    \end{pmatrix}
+\end{align*}
+$$P^{-1}=\frac{1}{9}\begin{pmatrix}
+    -2&5&4\\
+    2&4&5\\
+    1&2&-2\\
+\end{pmatrix}$$
+\begin{align*}
+    A^{100}&=(P\ diag(0,0,9)\ P^{-1}))^{100}\\
+    &=9^{100} P\ diag(0,0,1)P^{-1}\\
+    &=9^{100}\begin{pmatrix}
+        0&0&1\\
+        0&0&2\\
+        0&0&-2\\
+    \end{pmatrix}\begin{pmatrix}
+        -2&5&4\\
+        2&4&5\\
+        1&2&-2\\
+    \end{pmatrix}\\
+    &=9^{100}\begin{pmatrix}
+        1&2&-2\\
+        2&4&-4\\
+        -2&-4&4\\
+    \end{pmatrix}
+\end{align*}
+19.甲、乙两人轮流投篮，甲先投，甲每轮只投篮一次，而乙每轮投篮两次，先\\
+投中者为胜.已知甲、乙每次投篮命中率分别为$p,0.5$,且每人命中与否相互独\\
+立，若甲、乙两人胜率相同，则$p=$\underline{\hbox to 20mm{}}\\
+\textbf{解：}
+设事件$A$为甲获胜
+\begin{align*}
+    P(A)&=P(\overline{A} )\\
+    p+(1-p)\frac{1}{2}p+(1-p)\frac{1}{2}(1-p)\frac{1}{2}p+\cdots &= (1-p)\frac{1}{2}+(1-p)\frac{1}{2}(1-p)\frac{1}{2}+(1-p)\frac{1}{2}(1-p)\frac{1}{2}(1-p)\frac{1}{2}+\cdots \\
+    p\sum_{n=0}^{\infty}((1-P)\frac{1}{2})^n&=(1-p)\frac{1}{2}\sum_{n=0}^{\infty}((1-P)\frac{1}{2})^n\\
+    p&=\frac{1}{3}
+\end{align*}
+20.已知随机变量$X$在$\left(1,2\right)$上服从均匀分布，在$X=x$条件下$Y$服从参数为$x$\\
+的指数分布，则$E(XY^2)=$\underline{\hbox to 20mm{}}\\
+\textbf{解：} 
+\\
+$f_{\left. Y\right| X} (\left. y \right| x)=\begin{cases}
+    xe^{-xy},y>0\\
+    0,y\le 0
+\end{cases}$\\
+$f(x,y)=f_{X}(x) f_{\left. Y\right| X} (\left. y \right| x) =\begin{cases}
+    xe^{-xy},1<x<2 ,y>0\\
+    0,\text{其他}
+\end{cases}$
+\begin{align*}
+    E(XY^2)
+    &=\int_{1}^{2}\mathrm{d}x\int_{0}^{+\infty} xy^2 xe^{-xy} \mathrm{d}y\\
+    &=\int_{1}^{2}x^2\mathrm{d}x\int_{0}^{+\infty} y^2 e^{-xy} \mathrm{d}y\\
+    &=\int_{1}^{2}x^2\left. (-\frac{y^2 e^{-xy}}{x}-\frac{2y e^{-xy}}{x^2}-\frac{2e^{-xy}}{x^3})\right|_{0}^{+\infty}\mathrm{d}x\\
+    &=\int_{1}^{2}\frac{2}{x}\mathrm{d}x\\
+    &=\left. 2\ln x\right|_{1}^{2}\\
+    &=2\ln 2
+\end{align*}
+\textbf{三、解答题（共6小题，共计130分）}\\
+解答应写出文字说明、证明过程或演算步骤。\\
+21.（20分）求下列极限.\\
+（1）$\lim\limits_{n\to\infty}(1+\sin(\pi \sqrt{4n^2+2}))^n$\\
+（2）$\lim\limits_{x\to 0}\left[\frac{\arctan (1-e^x)}{\sqrt{1+4x^2}}+(\frac{\arctan x}{\tan x})^\frac{3}{\sin^2 x}\right]$\\
+（3）$\lim\limits_{x \to 0} \frac{\tan(\tan x)-\sin(\sin x)}{x-\sin x}$\\
+（4）$\lim\limits_{x\to 0^{+}} \frac{x^x -(\sin x)^x}{x^2\ln(1+x)}$\\
+\textbf{解：}\\
+（1）\\
+\begin{align*}
+	\lim \limits_{n\to\infty} (1+\sin(\pi\sqrt{4n^2+2}))^{n}&=\lim \limits_{n\to\infty} (1+\sin(\pi\sqrt{4n^2+2}-2n\pi))^{n}\\
+	&=\lim \limits_{n\to\infty} (1+\sin(\frac{2\pi}{\sqrt{4n^2+2}+2n}))^{n}\\
+	&=exp(\lim\limits_{n\to\infty} n\sin(\frac{2\pi}{\sqrt{4n^2+2}+2n}))\\
+	&=exp(\lim\limits_{n\to\infty} \frac{2n\pi}{\sqrt{4n^2+2}+2n})\\
+	&=e^{\frac{2\pi}{4}}\\
+	&=e^{\frac{\pi}{2}}
+\end{align*}
+（2）\\
+\begin{align*}
+    &\quad \lim\limits_{x\to 0}\left[\frac{\arctan (1-e^x)}{\sqrt{1+4x^2}}+(\frac{\arctan x}{\tan x})^\frac{3}{\sin^2 x}\right]\\
+    &=\frac{0}{1}+ \lim\limits_{x\to 0}(1+\frac{\arctan x-\tan x}{\tan x})^{\frac{3}{\sin^2 x}}\\
+    &=exp(\lim\limits_{x\to 0} \frac{3(\arctan x -\tan x)}{\tan x \sin^2 x})\\
+    &=exp(\lim\limits_{x\to 0} \frac{3(-\frac{2}{3}x^3)}{x^3})\\
+    &=\frac{1}{e^2}
+\end{align*}
+（3）\\
+\begin{align*}
+	&\quad\lim\limits_{x \to 0} \frac{\tan(\tan x)-\sin(\sin x)}{x-\sin x}\\&= \lim \limits_{x \to 0} \frac{\tan(\tan x) -\tan x +\tan x -\sin x + \sin x -\sin(\sin x)}{x-\sin x}\\
+	&=\lim \limits_{x\to 0}\frac{\frac{1}{3}\tan^3 x +\frac{1}{2}x^3 +\frac{1}{6}\sin^3 x}{\frac{1}{6}x^3}\\
+	&=6
+\end{align*}
+（4）\\
+\begin{align*}
+	\lim\limits_{x\to 0^{+}} \frac{x^x -(\sin x)^x}{x^2\ln(1+x)}&=
+	\lim\limits_{x\to 0^{+}} x^x \lim\limits_{x\to 0^{+}} \frac{1-(\frac{\sin x}{x})^x}{x^3}\\
+	&=\lim\limits_{x\to 0^{+}} \frac{1-e^{x\ln(1+\frac{\sin x - x}{x})}}{x^3}\\
+	&=\lim\limits_{x\to 0^{+}} \frac{x-\sin x}{x^3}\\
+	&=\frac{1}{6}
+\end{align*}
+22.（20分）设$a$与$b$都是常数，且$b>a>0$.\\
+（1）写出$yOz$上的圆$(y-b)^2+z^2=a^2$绕$Oz$轴旋转一周生成的环面$\Sigma$的方程;\\
+（2）记$\Sigma$所围成的空间区域为$\Omega$,计算三重积分$\iiint\limits_{\Omega}(x+y)^2\mathrm{d}v$.\\
+\textbf{解：}\\
+(1)\\
+$(\sqrt{x^2+y^2}-b)^2+z^2=a^2$\\
+(2)\\
+$z=\pm \sqrt{a^2-(r-b)^2}$
+\begin{align*}
+    &\quad \iiint\limits_{\Omega}(x+y)^2\mathrm{d}v\\
+    &=\int_{0}^{2\pi} \mathrm{d} \theta \int_{b-a}^{b+a} r\mathrm{d}r\int_{-\sqrt{a^2-(r-b)^2}}^{\sqrt{a^2-(r-b)^2}} (r\cos\theta+r\sin \theta)^2\mathrm{d}z\\
+    &=\int_{0}^{2\pi}(1+2\sin x\cos x)\mathrm{d}\theta \int_{b-a}^{b+a} 2r^3\sqrt{a^2-(r-b)^2}\mathrm{d} r\\
+    &=2\pi \int_{-a}^{a}2(u+b)^3\sqrt{a^2-u^2}\mathrm{d}u\\
+    &=4\pi\int_{-a}^{a}(u^3+3u^2b+3ub^2+b^3)\sqrt{a^2-u^2}\mathrm{d}u\\
+    &=8\pi\int_{0}^{a}(3u^2b+b^3)\sqrt{a^2-u^2}\mathrm{d}u\\
+    &=8\pi(\frac{b^3\pi a^2}{4}+\int_{0}^{\frac{\pi}{2}}3a^2 b\sin^2 t\ a\cos t\ a\cos t\ \mathrm{d} t)\\
+    &=2a^2 b^3\pi^2+8\pi \int_{0}^{\frac{\pi}{2}} 3a^4b \sin^2 t\ \cos^2 t \mathrm{d}t\\
+    &=2a^2 b^3\pi^2+8\pi \int_{0}^{\frac{\pi}{2}} 3a^4b (\sin^2 t-\sin^4 t)\mathrm{d}t\\
+    &=2a^2 b^3\pi^2+8\pi\ 3a^4b(\frac{1}{2}\frac{\pi}{2}-\frac{3}{4}\frac{1}{2}\frac{\pi}{2})\\
+    &=2a^2 b^3\pi^2+\frac{3a^4 b \pi^2}{2}
+\end{align*}
+23.（20分）设函数$f(x)$在区间$\left[a,b\right]$上具有连续导数,$f'(x)>0$,且$a\le f(x)\le b$.\\
+求证：\\
+（1）对任意$x_1,x_2 \in (a,b)$,存在$c\in(a,b)$ ,使得$f'(c)=\sqrt{f'(x_1)f'(x_2)}$;\\
+（2）存在$\xi\in(a,b)$使得$f\left[f(a)\right]-f\left[f(b)\right]=\left[f'(\xi)\right]^2(a-b)$.\\
+\textbf{解：}
+(1)\\
+不妨设$x_1<x_2$\\
+$min(f'(x_1),f'(x_2))\le \sqrt{f'(x_1)f'(x_2)} \le max(f'(x_1),f'(x_2))$\\
+由介值定理$\exists c\in\left[x_1,x_2\right]\subset (a,b)$,使得$f'(c)=\sqrt{f'(x_1)f'(x_2)}$\\
+（2）\\
+由拉格朗日中值定理
+\begin{align*}
+    f\left[f(a)\right]-f\left[f(b)\right]&=f'(x_1) (f(a)-f(b)) \left(x_1\text{介于}f(a),f(b)\text{之间,即}x_1\in(a,b)\right)\\
+    f\left[f(a)\right]-f\left[f(b)\right]&=f'(x_1)f'(x_2)(a-b)\left(x_1,x_2 \in (a,b)\right)\\
+    f\left[f(a)\right]-f\left[f(b)\right]&=\left[f'(\xi)\right]^2(a-b)\left(\xi \in (a,b)\right)
+\end{align*}
+24.（20分）设$\begin{cases}
+    x_n=x_{n-1}+2y_{n-1}\\
+    y_n=4x_{n-1}+3y_{n-1}
+\end{cases},(n=1,2,3,\cdots )$,且$x_0=2,y_0=1$,求$x_{2077}$.\\
+\textbf{解：}
+$$\begin{pmatrix}
+    x_n\\
+    y_n\\
+\end{pmatrix}=\begin{pmatrix}
+    1&2\\
+    4&3\\
+\end{pmatrix}\begin{pmatrix}
+    x_{n-1}\\
+    y_{n-1}\\
+\end{pmatrix}=\begin{pmatrix}
+    1&2\\
+    4&3\\
+\end{pmatrix}^n\begin{pmatrix}
+    x_{0}\\
+    y_{0}\\
+\end{pmatrix}=\begin{pmatrix}
+    1&2\\
+    4&3\\
+\end{pmatrix}^n\begin{pmatrix}
+    2\\
+    1\\
+\end{pmatrix}$$
+$$A=\begin{pmatrix}
+    1&2\\
+    4&3\\
+\end{pmatrix}$$
+设$\lambda_1,\lambda_2$为$A$的特征值\\
+$$\left| \lambda E -A\right| =\begin{pmatrix}
+    \lambda-1&-2\\
+    -4&\lambda -3\\
+\end{pmatrix}=\lambda^2-4\lambda -5=(\lambda-5)(\lambda +1)=0$$
+$$\Rightarrow \lambda_1=5,\lambda_2=-1$$
+设$\xi_1,\xi_2$分别为$\lambda_1,\lambda_2$对应的特征向量\\
+$(A-5E)\xi_1=0\Rightarrow \xi_1=\begin{pmatrix}
+    1\\
+    2\\
+\end{pmatrix}$\\
+$(A+E)\xi_2=0 \Rightarrow \xi_2=\begin{pmatrix}
+    1\\
+    -1\\
+\end{pmatrix}$\\
+$$P=\begin{pmatrix}
+    1&1\\
+    2&-1\\
+\end{pmatrix}$$
+$$P^{-1}=\frac{1}{-1-2}\begin{pmatrix}
+    -1&-1\\
+    -2&1
+\end{pmatrix}=\frac{1}{3}\begin{pmatrix}
+    1&1\\
+    2&-1
+\end{pmatrix}$$
+$$P^{-1}AP=diag(5,-1)$$
+\begin{align*}
+    A^{2077}&=(P\ diag(5,-1)\ P^{-1})^{2077}\\
+    &=\frac{1}{3} \begin{pmatrix}
+        1&1\\
+        2&-1
+    \end{pmatrix} \begin{pmatrix}
+        5^{2077}&0\\
+        0&-1
+    \end{pmatrix}\begin{pmatrix}
+        1&1\\
+        2&-1
+    \end{pmatrix}\\
+    &=\frac{1}{3} \begin{pmatrix}
+        5^{2077}&-1\\
+        2\cdot 5^{2077}&1\\
+    \end{pmatrix} \begin{pmatrix}
+        1&1\\
+        2&-1
+    \end{pmatrix}\\
+    &=\frac{1}{3}\begin{pmatrix}
+        5^{2077}-2&5^{2077}+1\\
+        2\cdot 5^{2077}+2&2\cdot 5^{2077}-1\\
+    \end{pmatrix}
+\end{align*}
+$$\begin{pmatrix}
+    x_{2077}\\
+    y_{2077}\\
+\end{pmatrix}=A^{2077}\begin{pmatrix}
+    2\\
+    1\\
+\end{pmatrix}=\frac{1}{2}\begin{pmatrix}
+    2\cdot 5^{2077} -4+5^{2077}+1\\
+    4\cdot 5^{2077}+4+2\cdot 5^{2077}-1\\
+\end{pmatrix}=\begin{pmatrix}
+    5^{2077} -1\\
+    2\cdot 5^{2077}+1\\
+\end{pmatrix}$$
+$$\Rightarrow x_{2077}=5^{2077} -1$$
+25.（20分）设三阶矩阵$P=\left(\alpha_1,\alpha_2,\alpha_3 \right)$,其中$\alpha_1,\alpha_2$分别是三阶矩阵$A$对应\\
+于特征值$-1$与$1$的特征向量,且$(A-E)\alpha_3-\alpha_2=0$.\\
+（1）证明$P$可逆;\\
+（2）计算$P^{-1}A^{*}P$.\\
+\textbf{解：}\\
+(1)\\
+\begin{align*}
+    (A-E)\alpha_3-\alpha_2&=0\\
+    A\alpha_3=\alpha_2+\alpha_3
+\end{align*}
+$\alpha_1,\alpha_2$对应$A$的不同特征值的特征向量,所以线性无关\\
+设$k_1 \alpha_1+k_2\alpha_2+k_3\alpha_3=0\cdots (1$)\\
+$A(k_1 \alpha_1+k_2\alpha_2+k_3\alpha_3)=-k_1\alpha_1+k_2\alpha_2+k_3\alpha_2+k_3\alpha_3=0\cdots (2)$\\
+(1)-(2)\\
+$2k_1\alpha_1 -k_3\alpha_2=0$\\
+因为$\alpha_1,\alpha_2$线性无关,所以$k_1=k_3=0$\\
+$\Rightarrow k_2=0$\\
+所以$\alpha_1,\alpha_2,\alpha_3$线性无关\\
+所以$P$可逆\\
+(2)\\
+$$Q=\begin{pmatrix}
+    -1&0&0\\
+    0&1&1\\
+    0&0&1\\
+\end{pmatrix}$$
+$$AP=PQ\Rightarrow P^{-1}AP=Q \Rightarrow A \sim Q$$
+$$Q\text{特征值}-1,1,1$$
+$$\left|A\right|=-1$$
+$$A^{*}\text{特征值}1,-1,-1$$
+$$P^{-1}A^{*}P=\begin{pmatrix}
+    1&0&0\\
+    0&-1&1\\
+    0&0&-1\\
+\end{pmatrix}$$
+26.（30分）设随机变量$X$的概率密度为$f_{X}(x)=\begin{cases}
+    2x,0<x<1\\
+    0,\text{其他}\\
+\end{cases}$,在给定\\
+$X=x(0<x<1)$的条件下,随机变量$Y$在$(-x,x)$上服从均匀分布.\\
+（1）求$P\left\{\left. \frac{1}{2}<X<\frac{3}{2} \right|Y=EY\right\}$;\\
+（2）判断$X$与$Y$的独立性、相关性，并给出理由;\\
+（3）令随机变量$Z=X-Y$，求$f_{Z}(z)$\\
+\textbf{解：}
+（1）\\
+$$f_{\left. Y\right| X}(\left. y\right| x)=\begin{cases}
+    \frac{1}{2x},-x< y < x,\\
+    0,\text{其他}\\
+\end{cases}$$
+$$f(x,y)=f_{X}(x) f_{\left. Y\right| X}(\left. y\right| x)=\begin{cases}
+    1,0<x<1,-x< y < x,\\
+    0,\text{其他}
+\end{cases}$$
+$$f_{Y}(y)=\begin{cases}
+    \int_{y}^{1}\mathrm{d}x,0< y < 1\\
+    \int_{-y}^{1}\mathrm{d}x, -1< y <0\\
+\end{cases}=\begin{cases}
+    1-y,0<y<1\\
+    1+y,-1<y<0\\
+\end{cases}=1-\left|y\right| (-1<y<1)$$
+$$EY=\int_{-1}^{1}y(1-\left|y\right|)\mathrm{d}y=0$$
+\begin{align*}
+    P\left\{\left. \frac{1}{2}<X<\frac{3}{2} \right|Y=EY\right\}
+    &=P\left\{\left. \frac{1}{2}<X<\frac{3}{2} \right|Y=0\right\}\\
+    &=\int_{\frac{1}{2}}^{\frac{3}{2}}\frac{f(x,y)}{f_{Y}(y)}\mathrm{d}x\\
+    &=\int_{\frac{1}{2}}^{1}\mathrm{d}x\\
+    &=\frac{1}{2}
+\end{align*}
+（2）\\
+$$f_{X}(x)f_{Y}(y)\neq f(x,y),\Rightarrow \text{X，Y 不独立}$$
+$$E(XY)=\int_{0}^{1}\mathrm{d} x \int_{-x}^{x} xy\mathrm{d}{y} =0$$
+% $$E(X)=\int_{0}^{1}2x^2\mathrm{d}x=\frac{2}{3}$$
+$$Cov(X,Y)=E(XY)-E(X)E(Y)=0\Rightarrow \text{不相关}$$
+（3）\\
+$$\begin{cases}
+    z=x-y\\
+    y=-x\\
+\end{cases} \Rightarrow x=\frac{z}{2}$$
+$$\text{当}0<z<2\text{时}$$
+\begin{align*}
+    F_{Z}(z)&=P(Z\le z)\\
+    &=P(X-Y\le z)\\
+    &=\int_{\frac{z}{2}}^{1}\mathrm{d}x\int_{-x}^{x-z}\mathrm{d}y\\
+    &=\int_{\frac{z}{2}}^{1} (2x-z)\mathrm{d}x\\
+    &=\left. (x^2-zx)\right|_{\frac{z}{2}}^{1}\\
+    &=1-\frac{z^2}{4}-z+\frac{z^2}{2}\\
+    &=\frac{z^2}{4}-z+1
+\end{align*}
+$$\frac{\mathrm{d} F_{Z}(z)}{\mathrm{d}z}=\frac{z}{2}-1$$
+$$f_Z(z)=\begin{cases}
+    \frac{z}{2}-1,0<z<2\\
+    0,\text{其他}
+\end{cases}$$
+\textbf{四、附加题（小作文，50分）}\\
+将你对莉姆丝的爱用文字描绘出来，文体不限，诗歌更好，300字以上。\\
+评分要素：修辞，剧情，情感，发病程度，好活赖活。\\
+温馨提示：会进行枝网查重，查重率70\%以上不计分；名字写错，负分并记入\\
+莉姆丝的假粉榜；写的特别好的按心情加分。
+\newpage
+粉丝牌\\
+\includegraphics{fan_club.PNG}
+\end{document}
