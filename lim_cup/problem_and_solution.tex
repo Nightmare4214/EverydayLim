@@ -140,7 +140,7 @@ C.$\int_{0}^{\pi}\mathrm{d}\theta\int_{0}^{2\sin \theta}f(r^2\sin\theta\cos\thet
 \textbf{解：}
 \begin{align*}
     &\quad \iint\limits_{D}f(xy)\mathrm{d}x\mathrm{d}y\\
-    &= \int_{-1}^{1}\mathrm{d}x\int_{-1-\sqrt{1-x^2}}^{-1+\sqrt{1+x^2}}f(xy)\mathrm{d}y\\
+    &= \int_{-1}^{1}\mathrm{d}x\int_{1-\sqrt{1-x^2}}^{1+\sqrt{1+x^2}}f(xy)\mathrm{d}y\\
     &= \int_{0}^{2}\mathrm{d}y\int_{-\sqrt{2y-y^2}}^{\sqrt{2y-y^2}}f(xy)\mathrm{d}x\\
     &= \int_{0}^{\pi}\mathrm{d}\theta\int_{0}^{2\sin \theta}f(r^2\sin\theta\cos\theta)r\mathrm{d}r
 \end{align*}
@@ -171,8 +171,8 @@ $$B=\begin{pmatrix}
     0&0&5\\
 \end{pmatrix}$$
 $$\text{特征值不相同}\Rightarrow A\text{不相似于}B \Rightarrow \text{\ding{174}不成立}$$
-$$\Rightarrow \text{\ding{175}不成立}$$
-$$\Rightarrow \text{选B}$$
+$$A,B\text{可逆}\Rightarrow \text{惯性系数加起来=n,平方后只有正的惯性系数，\ding{175}成立}$$
+$$\Rightarrow \text{选C}$$
 \newpage
 \noindent
 7.$\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5$均是4维列向量,记$A=\left(\alpha_1,\alpha_2,\alpha_3,\alpha_4 \right),B=\left(\alpha_1,\alpha_2,\alpha_3,\alpha_4,\alpha_5 \right)$.\\
@@ -239,7 +239,7 @@ C.$P\left\{Y=-1.2X-3.2\right\}=1$\hfill
 D.$P\left\{Y=-1.2X+3.2\right\}=1$\\
 \textbf{解：}
   设$Y=aX+b$
-  $$E(X)=\frac{8}{3},D(X)=\frac{8}{9},E(Y)=\frac{16}{5},D(Y)=\frac{16}{25}$$
+  $$E(X)=\frac{8}{3},D(X)=\frac{8}{9},E(Y)=\frac{32}{5},D(Y)=\frac{32}{25}$$
   \begin{align*}
     Cov(X,Y)&=\rho_{XY}\sqrt{D(X)}\sqrt{D(Y)}\\
             &=-\frac{16}{15}
@@ -302,7 +302,7 @@ $f(x)=\frac{\ln x}{(1+x)^2}+\frac{1+x^2}{1+x^4}\int_{1}^{+\infty}f(x)\mathrm{d}x
 
 \begin{align*}
     \iint\limits_{D} xf'_{x}+yf'_{y}\mathrm{d}\sigma &=\int_{0}^{2\pi} \mathrm{d}\theta \int_{0}^{1}(\rho\cos \theta f'_{x}+\rho\sin \theta f'_{y})\rho \mathrm{d}\rho\\
-    &=\int_{0}^{1} \rho\mathrm{d}\rho \int_{0}^{2\pi} (\frac{\mathrm{d} y}{\mathrm{d} \theta}f'_{x}-\frac{\mathrm{d} x}{\mathrm{d} \theta}f'_{y})\mathrm{d}\theta\\
+    &=\int_{0}^{1} \rho\mathrm{d}\rho \int_{0}^{2\pi} (\frac{\partial y}{\partial \theta}f'_{x}-\frac{\partial x}{\partial \theta}f'_{y})\mathrm{d}\theta\\
     &=\int_{0}^{1}\rho\mathrm{d}\rho\int_{0}^{2\pi}-f'_{y}\mathrm{d}x+f'_{x}\mathrm{d}y\\
     &=\int_{0}^{1}\rho\mathrm{d}\rho \iint\limits_{x^2+y^2\le \rho} (f''_{xx}+f''_{yy})d\sigma\\
     &=\int_{0}^{1}\rho\mathrm{d}\rho \iint\limits_{x^2+y^2\le \rho} e^{-(x^2+y^2)}d\sigma\\
@@ -370,16 +370,8 @@ $f(1,5,0)=$\underline{\hbox to 20mm{}}.\\
 \textbf{解：}
 设$\lambda_1=\lambda_2=5,\lambda_3$为$A$的特征值，对应的特征向量为$\xi_1,\xi_2,\xi_3$
 $$\xi_1^T \xi_3=0,\xi_2^T \xi_3=0$$
-$$\begin{cases}
-    x_1-x_2+2x_3=0\\
-    x_1+x_2+x_3=0
-\end{cases}$$
-$$\Rightarrow \xi_3=\begin{pmatrix}
-    -5\\
-    1\\
-    3\\
-\end{pmatrix}$$
 $$x_0=-\xi_1+2\xi_2=\left(\xi_1,\xi_2,\xi_3\right) \left(-1,2,0\right)^T$$
+$$\Rightarrow Ax_0=5Ax_0$$
 \begin{align*}
     f(1,5,0)&=x_0^T A x_0\\
     &=(-1,2,0)\begin{pmatrix}
@@ -391,7 +383,7 @@ $$x_0=-\xi_1+2\xi_2=\left(\xi_1,\xi_2,\xi_3\right) \left(-1,2,0\right)^T$$
         2\\
         0
     \end{pmatrix}\\
-    &=(-\xi_1+2\xi_2)^T(5\xi_1,5\xi_2,\lambda \xi_3)\begin{pmatrix}
+    &=(-\xi_1+2\xi_2)^T(5\xi_1,5\xi_2,5 \xi_3)\begin{pmatrix}
         -1\\
         2\\
         0
@@ -504,8 +496,7 @@ $f(x,y)=f_{X}(x) f_{\left. Y\right| X} (\left. y \right| x) =\begin{cases}
     E(XY^2)
     &=\int_{1}^{2}\mathrm{d}x\int_{0}^{+\infty} xy^2 xe^{-xy} \mathrm{d}y\\
     &=\int_{1}^{2}x^2\mathrm{d}x\int_{0}^{+\infty} y^2 e^{-xy} \mathrm{d}y\\
-    &=\int_{1}^{2}x^2\left. (-\frac{y^2 e^{-xy}}{x}-\frac{2y e^{-xy}}{x^2}-\frac{2e^{-xy}}{x^3})\right|_{0}^{+\infty}\mathrm{d}x\\
-    &=\int_{1}^{2}\frac{2}{x}\mathrm{d}x\\
+    &=\int_{1}^{2}\frac{\Gamma(3)}{x}\mathrm{d}x\\
     &=\left. 2\ln x\right|_{1}^{2}\\
     &=2\ln 2
 \end{align*}
@@ -575,7 +566,7 @@ $z=\pm \sqrt{a^2-(r-b)^2}$
 （2）存在$\xi\in(a,b)$使得$f\left[f(a)\right]-f\left[f(b)\right]=\left[f'(\xi)\right]^2(a-b)$.\\
 \textbf{解：}
 (1)\\
-不妨设$x_1<x_2$\\
+不妨设$x_1\le x_2$\\
 $min(f'(x_1),f'(x_2))\le \sqrt{f'(x_1)f'(x_2)} \le max(f'(x_1),f'(x_2))$\\
 由介值定理$\exists c\in\left[x_1,x_2\right]\subset (a,b)$,使得$f'(c)=\sqrt{f'(x_1)f'(x_2)}$\\
 （2）\\
@@ -763,12 +754,12 @@ $$\text{当}0<z<2\text{时}$$
     F_{Z}(z)&=P(Z\le z)\\
     &=P(X-Y\le z)\\
     &=\int_{\frac{z}{2}}^{1}\mathrm{d}x\int_{-x}^{x-z}\mathrm{d}y\\
-    &=\int_{\frac{z}{2}}^{1} (2x-z)\mathrm{d}x\\
-    &=\left. (x^2-zx)\right|_{\frac{z}{2}}^{1}\\
-    &=1-\frac{z^2}{4}-z+\frac{z^2}{2}\\
-    &=\frac{z^2}{4}-z+1
+    &=\int_{\frac{z}{2}}^{1} (z-2x)\mathrm{d}x\\
+    &=\left. (zx-x^2)\right|_{\frac{z}{2}}^{1}\\
+    &=z-\frac{z^2}{2}-1+\frac{z^2}{4}\\
+    &=-\frac{z^2}{4}+z-1
 \end{align*}
-$$\frac{\mathrm{d} F_{Z}(z)}{\mathrm{d}z}=\frac{z}{2}-1$$
+$$\frac{\mathrm{d} F_{Z}(z)}{\mathrm{d}z}=1-\frac{z}{2}$$
 $$f_Z(z)=\begin{cases}
     \frac{z}{2}-1,0<z<2\\
     0,\text{其他}
