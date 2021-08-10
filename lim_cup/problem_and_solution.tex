@@ -753,11 +753,11 @@ $$\text{当}0<z<2\text{时}$$
 \begin{align*}
     F_{Z}(z)&=P(Z\le z)\\
     &=P(X-Y\le z)\\
-    &=\int_{\frac{z}{2}}^{1}\mathrm{d}x\int_{x-z}^{-x}\mathrm{d}y\\
-    &=\int_{\frac{z}{2}}^{1} (z-2x)\mathrm{d}x\\
-    &=\left. (zx-x^2)\right|_{\frac{z}{2}}^{1}\\
-    &=z-\frac{z^2}{2}-1+\frac{z^2}{4}\\
-    &=-\frac{z^2}{4}+z-1
+    &=1-\int_{\frac{z}{2}}^{1}\mathrm{d}x\int_{-x}^{x-z}\mathrm{d}y\\
+    &=1+\int_{\frac{z}{2}}^{1} (z-2x)\mathrm{d}x\\
+    &=1+\left. (zx-x^2)\right|_{\frac{z}{2}}^{1}\\
+    &=1+z-\frac{z^2}{2}-1+\frac{z^2}{4}\\
+    &=-\frac{z^2}{4}+z
 \end{align*}
 $$\frac{\mathrm{d} F_{Z}(z)}{\mathrm{d}z}=1-\frac{z}{2}$$
 $$f_Z(z)=\begin{cases}
