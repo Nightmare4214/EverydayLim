@@ -115,7 +115,7 @@ D.$e^{-\frac{1}{2}x}\left(a\cos \frac{\sqrt{3}}{2}x + bx\sin\frac{\sqrt{3}}{2}x 
 \textbf{解：}
 \begin{align*}
     \lambda^2 + \lambda +1 &=0\\
-    \lambda&=\frac{-1 \pm 3i}{2}
+    \lambda&=\frac{-1 \pm \sqrt{3}i}{2}
 \end{align*}
 %$$Y=e^{-\frac{1}{2}x} \left(C_1 \cos \frac{\sqrt{3}}{2}x + C_2 \sin \frac{\sqrt{3}}{2}x \right)$$
 $$y^{*}=xe^{-\frac{1}{2}x}\left(A\cos \frac{\sqrt{3}}{2}x+B\sin \frac{\sqrt{3}}{2}x\right)$$
@@ -550,7 +550,7 @@ $z=\pm \sqrt{a^2-(r-b)^2}$
 \begin{align*}
     &\quad \iiint\limits_{\Omega}(x+y)^2\mathrm{d}v\\
     &=\int_{0}^{2\pi} \mathrm{d} \theta \int_{b-a}^{b+a} r\mathrm{d}r\int_{-\sqrt{a^2-(r-b)^2}}^{\sqrt{a^2-(r-b)^2}} (r\cos\theta+r\sin \theta)^2\mathrm{d}z\\
-    &=\int_{0}^{2\pi}(1+2\sin x\cos x)\mathrm{d}\theta \int_{b-a}^{b+a} 2r^3\sqrt{a^2-(r-b)^2}\mathrm{d} r\\
+    &=\int_{0}^{2\pi}(1+2\sin \theta\cos \theta)\mathrm{d}\theta \int_{b-a}^{b+a} 2r^3\sqrt{a^2-(r-b)^2}\mathrm{d} r\\
     &=2\pi \int_{-a}^{a}2(u+b)^3\sqrt{a^2-u^2}\mathrm{d}u\\
     &=4\pi\int_{-a}^{a}(u^3+3u^2b+3ub^2+b^3)\sqrt{a^2-u^2}\mathrm{d}u\\
     &=8\pi\int_{0}^{a}(3u^2b+b^3)\sqrt{a^2-u^2}\mathrm{d}u\\
@@ -753,7 +753,7 @@ $$\text{当}0<z<2\text{时}$$
 \begin{align*}
     F_{Z}(z)&=P(Z\le z)\\
     &=P(X-Y\le z)\\
-    &=\int_{\frac{z}{2}}^{1}\mathrm{d}x\int_{-x}^{x-z}\mathrm{d}y\\
+    &=\int_{\frac{z}{2}}^{1}\mathrm{d}x\int_{x-z}^{-x}\mathrm{d}y\\
     &=\int_{\frac{z}{2}}^{1} (z-2x)\mathrm{d}x\\
     &=\left. (zx-x^2)\right|_{\frac{z}{2}}^{1}\\
     &=z-\frac{z^2}{2}-1+\frac{z^2}{4}\\
