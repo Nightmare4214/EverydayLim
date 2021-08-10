@@ -413,62 +413,20 @@ $$A\alpha_1 =0\alpha_1$$
 $$A\alpha_2=0\alpha_2$$
 $$A\alpha_3=b=9\alpha_3$$
 $$\text{所以}A\text{特征值为}0,0,9$$
-设$P=(\alpha_1,\alpha_2,\alpha_3)$
-$$P^{-1}AP=diag(0,0,9)$$
+$$\Rightarrow A=\alpha \beta^T$$
+$$ \alpha \beta^T \alpha_3=9\alpha_3 \Rightarrow \text{取}\alpha=\alpha_3,\text{则}\beta^T \alpha=9$$
 \begin{align*}
-    \begin{pmatrix}
-        -2&2&1&1&0&0\\
-        1&0&2&0&1&0\\
-        0&1&-2&0&0&1\\
-    \end{pmatrix} & \rightarrow \begin{pmatrix}
-        1&0&2&0&1&0\\
-        0&1&-2&0&0&1\\
-        -2&2&1&1&0&0\\
-    \end{pmatrix}\\
-    &\rightarrow \begin{pmatrix}
-        1&0&2&0&1&0\\
-        0&1&-2&0&0&1\\
-        0&2&5&1&2&0\\
-    \end{pmatrix}\\
-    &\rightarrow \begin{pmatrix}
-        1&0&2&0&1&0\\
-        0&1&-2&0&0&1\\
-        0&0&9&1&2&-2\\
-    \end{pmatrix}\\
-    &\rightarrow \begin{pmatrix}
-        1&0&2&0&1&0\\
-        0&1&-2&0&0&1\\
-        0&0&1&\frac{1}{9}&\frac{2}{9}&-\frac{2}{9}\\
-    \end{pmatrix}\\
-    &\rightarrow \begin{pmatrix}
-        1&0&0&-\frac{2}{9}&\frac{5}{9}&\frac{4}{9}\\
-        0&1&0&\frac{2}{9}&\frac{4}{9}&\frac{5}{9}\\
-        0&0&1&\frac{1}{9}&\frac{2}{9}&-\frac{2}{9}\\
-    \end{pmatrix}
+    \alpha\beta^T x&=0\\
+    \beta^T \alpha\beta^T (k_1\alpha_1+k_2\alpha_2)&=0\\
+    \beta^T (k_1\alpha_1+k_2\alpha_2)&=0\\
+    \beta&=k\alpha_3
 \end{align*}
-$$P^{-1}=\frac{1}{9}\begin{pmatrix}
-    -2&5&4\\
-    2&4&5\\
+$$\beta^T \alpha=9\Rightarrow \beta=\alpha_3 \Rightarrow A=\alpha_3 \alpha_3^T$$
+$$A^100=(\alpha_3 \alpha_3^T)^100=9^{99} A=9^{99}\begin{pmatrix}
     1&2&-2\\
+    2&4&-4\\
+    -2&-4&4\\
 \end{pmatrix}$$
-\begin{align*}
-    A^{100}&=(P\ diag(0,0,9)\ P^{-1}))^{100}\\
-    &=9^{100} P\ diag(0,0,1)P^{-1}\\
-    &=9^{100}\begin{pmatrix}
-        0&0&1\\
-        0&0&2\\
-        0&0&-2\\
-    \end{pmatrix}\begin{pmatrix}
-        -2&5&4\\
-        2&4&5\\
-        1&2&-2\\
-    \end{pmatrix}\\
-    &=9^{100}\begin{pmatrix}
-        1&2&-2\\
-        2&4&-4\\
-        -2&-4&4\\
-    \end{pmatrix}
-\end{align*}
 19.甲、乙两人轮流投篮，甲先投，甲每轮只投篮一次，而乙每轮投篮两次，先\\
 投中者为胜.已知甲、乙每次投篮命中率分别为$p,0.5$,且每人命中与否相互独\\
 立，若甲、乙两人胜率相同，则$p=$\underline{\hbox to 20mm{}}\\
@@ -476,9 +434,9 @@ $$P^{-1}=\frac{1}{9}\begin{pmatrix}
 设事件$A$为甲获胜
 \begin{align*}
     P(A)&=P(\overline{A} )\\
-    p+(1-p)\frac{1}{2}p+(1-p)\frac{1}{2}(1-p)\frac{1}{2}p+\cdots &= (1-p)\frac{1}{2}+(1-p)\frac{1}{2}(1-p)\frac{1}{2}+(1-p)\frac{1}{2}(1-p)\frac{1}{2}(1-p)\frac{1}{2}+\cdots \\
-    p\sum_{n=0}^{\infty}((1-P)\frac{1}{2})^n&=(1-p)\frac{1}{2}\sum_{n=0}^{\infty}((1-P)\frac{1}{2})^n\\
-    p&=\frac{1}{3}
+    p+(1-p)\frac{1}{4}p+\cdots &= (1-p)\frac{3}{4}+(1-p)\frac{1}{4}(1-p)\frac{3}{4}+\cdots \\
+    p\sum_{n=0}^{\infty}((1-p)\frac{1}{4})^n&=(1-p)\frac{3}{4}\sum_{n=0}^{\infty}((1-p)\frac{1}{4})^n\\
+    p&=\frac{4}{7}
 \end{align*}
 20.已知随机变量$X$在$\left(1,2\right)$上服从均匀分布，在$X=x$条件下$Y$服从参数为$x$\\
 的指数分布，则$E(XY^2)=$\underline{\hbox to 20mm{}}\\
@@ -749,15 +707,18 @@ $$\begin{cases}
     z=x-y\\
     y=-x\\
 \end{cases} \Rightarrow x=\frac{z}{2}$$
+$$\text{当}z>2\text{时}\Rightarrow F_{Z}(z)=1$$
+$$\text{当}z<0\text{时}\Rightarrow F_{Z}(z)=0$$
 $$\text{当}0<z<2\text{时}$$
 \begin{align*}
     F_{Z}(z)&=P(Z\le z)\\
     &=P(X-Y\le z)\\
-    &=1-\int_{\frac{z}{2}}^{1}\mathrm{d}x\int_{-x}^{x-z}\mathrm{d}y\\
-    &=1+\int_{\frac{z}{2}}^{1} (z-2x)\mathrm{d}x\\
-    &=1+\left. (zx-x^2)\right|_{\frac{z}{2}}^{1}\\
-    &=1+z-\frac{z^2}{2}-1+\frac{z^2}{4}\\
-    &=-\frac{z^2}{4}+z
+    &=1-\int_{\frac{z}{2}}^{1}\mathrm{d}x\int_{-x}^{x-z}\mathrm{d}y
+\end{align*}
+\begin{align*}
+    &\quad \frac{\mathrm{d} F_{Z}(z)}{\mathrm{d}z}\\
+    &=-(\int_{\frac{z}{2}}^{1}-\mathrm{d}x+0-\frac{1}{2}\int_{-\frac{z}{2}}^{\frac{z}{2}-z}\mathrm{d}y )\\
+    &=1-\frac{z}{2}
 \end{align*}
 $$\frac{\mathrm{d} F_{Z}(z)}{\mathrm{d}z}=1-\frac{z}{2}$$
 $$f_Z(z)=\begin{cases}
