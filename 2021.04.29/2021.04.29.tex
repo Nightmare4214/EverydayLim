@@ -9,7 +9,7 @@
 
 \begin{align*}
 \iint\limits_{D} xf'_{x}+yf'_{y}\mathrm{d}\sigma &=\int_{0}^{2\pi} \mathrm{d}\theta \int_{0}^{1}(\rho\cos \theta f'_{x}+\rho\sin \theta f'_{y})\rho \mathrm{d}\rho\\
-&=\int_{0}^{1} \rho\mathrm{d}\rho \int_{0}^{2\pi} (\frac{\mathrm{d} y}{\mathrm{d} \theta}f'_{x}-\frac{\mathrm{d} x}{\mathrm{d} \theta}f'_{y})\mathrm{d}\theta\\
+&=\int_{0}^{1} \rho\mathrm{d}\rho \int_{0}^{2\pi} (\frac{\partial y}{\partial \theta}f'_{x}-\frac{\partial x}{\partial \theta}f'_{y})\mathrm{d}\theta\\
 &=\int_{0}^{1}\rho\mathrm{d}\rho\int_{0}^{2\pi}-f'_{y}\mathrm{d}x+f'_{x}\mathrm{d}y\\
 &=\int_{0}^{1}\rho\mathrm{d}\rho \iint\limits_{x^2+y^2\le \rho} (f''_{xx}+f''_{yy})d\sigma\\
 &=\int_{0}^{1}\rho\mathrm{d}\rho \iint\limits_{x^2+y^2\le \rho} e^{-(x^2+y^2)}d\sigma\\
